@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Tags: 计划表 | Lux032 Blog</title>
+    <title>在Hetzner使用Debian10服务器架设PT盒子的方法 | Lux032 Blog</title>
     <meta name="author" content="lux032" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -33,6 +33,12 @@
 <script src="/js/lib/preview.js"></script>
 
 
+
+
+
+
+
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
 
 
 
@@ -144,72 +150,57 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/tags/%E8%AE%A1%E5%88%92%E8%A1%A8/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                计划表
-            </a>
+            <div class="article">
+    <div>
+        <h1>在Hetzner使用Debian10服务器架设PT盒子的方法</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/8
         </span>
         
         
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%A4%87%E5%BF%98/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                备忘
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%A4%87%E5%BF%98/" style="color: #03a9f4">备忘</a>
+            </span>
+            
         </span>
-        
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/10/7</div>
-            <a href="/2023/10/07/blog%E5%B7%B2%E8%AE%BE%E7%BD%AE%E5%AE%8C%E6%88%90%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8/">
-                <h3>Blog已设置完成的项目列表</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E6%B8%85%E5%8D%95/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        清单
-                    </a>
-                </span>
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/%E8%AE%A1%E5%88%92%E8%A1%A8/" style="color: #ffa2c4">计划表</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p>在Hetzner选择服务器配置CPX21</p>
+<p>然后使用</p>
+<p>jerry048&#x2F;Dedicated-Seedbox项目的一键脚本</p>
+<p>bash &lt;(wget -qO- <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/jerry048/Dedicated-Seedbox/main/Install.sh">https://raw.githubusercontent.com/jerry048/Dedicated-Seedbox/main/Install.sh</a>) user password 1024</p>
+<p>user和password 替换为自己的信息 这里的用户名和密码为QB的登录账户</p>
+<p>使用ssh连接到服务器 选择相应的qb版本 安装bbr分流服务</p>
+<p>安装完成后输入reboot重启服务器</p>
+<p>qb的登录地址为服务器ip的8080端口</p>
+<p>登录qb后设置为中文界面 在高级设置中将磁盘io调整为16 </p>
+<p>即可开始使用</p>
+
     </div>
+    
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
     
 </div>
 
@@ -241,6 +232,22 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "https://lux10032.myqnapcloud.cn:8986/",
+        region: "",
+        path: location.pathname,
+        lang: "",
+    })
+</script>
+
+
     
 </body>
 </html>
