@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>categories | Lux032 Blog</title>
+    <title>如何设置使用git对github进行传输时候使用443端口 | Lux032 Blog</title>
     <meta name="author" content="lux032" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -33,6 +33,12 @@
 <script src="/js/lib/preview.js"></script>
 
 
+
+
+
+
+
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
 
 
 
@@ -144,36 +150,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%B8%85%E5%8D%95/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                清单
-            </a>
+            <div class="article">
+    <div>
+        <h1>如何设置使用git对github进行传输时候使用443端口</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/8
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/QNAP-Docker/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                QNAP Docker
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/Git-SSH/" style="background: #03a9f4">
+        <span class="category">
+            <a href="/categories/Git-SSH/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -182,7 +172,38 @@
         </span>
         
         
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%A4%87%E5%BF%98-%E6%95%99%E7%A8%8B/" style="color: #00a596">备忘 教程</a>
+            </span>
+            
+        </span>
+        
     </div>
+    
+    <div class="content" v-pre>
+        <p>在用户文件夹的隐藏目录.ssh文件夹创建一个记事本写入以下内容</p>
+<p>Host github.com<br>Hostname ssh.github.com<br>Port 443</p>
+<p>重命名为无扩展名的config</p>
+<p>此方法用于解决宽带或代理线路封禁22端口导致git无法正常推送给github的情况</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
     
 </div>
 
@@ -214,6 +235,22 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "https://lux10032.myqnapcloud.cn:8986/",
+        region: "",
+        path: location.pathname,
+        lang: "",
+    })
+</script>
+
+
     
 </body>
 </html>

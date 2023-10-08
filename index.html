@@ -189,6 +189,10 @@
         </span>
         
         
+        <span class="special">
+            <i class="fa-solid fa-grip-vertical fa-fw"></i>
+        </span>
+        
     </div>
     <div class="description">
         <div class="content" v-pre>
@@ -217,11 +221,132 @@
         
         <span class="tag">
             
-            <a href="/tags/%E8%AE%A1%E5%88%92%E8%A1%A8/" style="color: #03a9f4">计划表</a>
+            <a href="/tags/%E8%AE%A1%E5%88%92%E8%A1%A8/" style="color: #00a596">计划表</a>
         </span>
         
     </div>
     <a href="/2023/10/07/blog%E5%B7%B2%E8%AE%BE%E7%BD%AE%E5%AE%8C%E6%88%90%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/10/08/%E5%A8%81%E8%81%94%E9%80%9A%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95/">
+        <h2 class="post-title">威联通容器自动更新方法</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/QNAP-Docker/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                QNAP Docker
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/8
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>  因为威联通的容器管理站没有定期检测自动更新容器的功能 所以使用watchtower工具来实现此功能。</p>
+<p>  对于此功能并没有经过精细的研究只能说just work。使用威联通容器工作站的创建功能添加下列yaml。</p>
+<p><code>version:&quot;3&quot;</code></p>
+<p><code>services:</code></p>
+<p><code>watchtower:</code></p>
+<p><code>image:containrrr/watchtower</code></p>
+<p><code>container_name:watchtower</code></p>
+<p><code>restart:always</code></p>
+<p><code>environment:</code></p>
+<p><code>-TZ=Asia/Shanghai</code></p>
+<p><code>volumes:</code></p>
+<p><code>-/var/run/docker.sock:/var/run/docker.sock</code></p>
+<p><code>command:nginxredis--cleanup--schedule&quot;0 0 4 * * *&quot;</code></p>
+<p>需要修改的部分为<code>command:nginxredis--cleanup--schedule&quot;0 0 4 * * *&quot;</code></p>
+<p>将command:nginxredis这部分改为你需要更新的容器名称</p>
+<p>注意是你已经建立的容器名称不是镜像名称</p>
+<p>schedule”0 0 4 * * *” 这部分是cron 格式的时间表达式</p>
+<p>该时间表达式由六个字段组成，它们按顺序表示了任务的执行时间：</p>
+<p>秒 分 时 日 月 星期 按需修改</p>
+<p>例如 0 7 * * 3</p>
+<p>此表达式为每周三早上七点更新</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%A4%87%E5%BF%98-%E6%95%99%E7%A8%8B/" style="color: #ff7d73">备忘 教程</a>
+        </span>
+        
+    </div>
+    <a href="/2023/10/08/%E5%A8%81%E8%81%94%E9%80%9A%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/10/08/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8git%E5%AF%B9github%E8%BF%9B%E8%A1%8C%E4%BC%A0%E8%BE%93%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8443%E7%AB%AF%E5%8F%A3/">
+        <h2 class="post-title">如何设置使用git对github进行传输时候使用443端口</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/Git-SSH/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Git SSH
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/8
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>在用户文件夹的隐藏目录.ssh文件夹创建一个记事本写入以下内容</p>
+<p>Host github.com<br>Hostname ssh.github.com<br>Port 443</p>
+<p>重命名为无扩展名的config</p>
+<p>此方法用于解决宽带或代理线路封禁22端口导致git无法正常推送给github的情况</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%A4%87%E5%BF%98-%E6%95%99%E7%A8%8B/" style="color: #03a9f4">备忘 教程</a>
+        </span>
+        
+    </div>
+    <a href="/2023/10/08/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8git%E5%AF%B9github%E8%BF%9B%E8%A1%8C%E4%BC%A0%E8%BE%93%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8443%E7%AB%AF%E5%8F%A3/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">

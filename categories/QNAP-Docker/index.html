@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>bangumis | Lux032 Blog</title>
+    <title>Categories: QNAP Docker | Lux032 Blog</title>
     <meta name="author" content="lux032" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -33,12 +33,6 @@
 <script src="/js/lib/preview.js"></script>
 
 
-
-
-
-
-
-<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
 
 
 
@@ -150,34 +144,83 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div class="article">
-    <div>
-        <h1>bangumis</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/10/8
+            <div id="archives">
+    
+    <div class="categories-tags">
+        
+        
+        
+        <span>
+            <a href="/categories/%E6%B8%85%E5%8D%95/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                清单
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/categories/QNAP-Docker/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                QNAP Docker
+            </a>
+        </span>
+        
+        
+        
+        
+        
+        <span>
+            <a href="/categories/Git-SSH/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Git SSH
+            </a>
         </span>
         
         
     </div>
     
-    <div class="content" v-pre>
-        
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2023/10/8</div>
+            <a href="/2023/10/08/%E5%A8%81%E8%81%94%E9%80%9A%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95/">
+                <h3>威联通容器自动更新方法</h3>
+            </a>
+            <div class="info">
+                
+                <span class="category">
+                    <a href="/categories/QNAP-Docker/">
+                        <span class="icon">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </span>
+                        QNAP Docker
+                    </a>
+                </span>
+                
+                
+                <span class="tags">
+                    <span class="icon">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
+                    
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E5%A4%87%E5%BF%98-%E6%95%99%E7%A8%8B/" style="color: #00a596">备忘 教程</a>
+                    </span>
+                    
+                </span>
+                
+            </div>
+        </div>
     </div>
-    
-    
-    
-    
-    
-    
-    <div id="comment">
-        <div id="twikoo-container"></div>
-    </div>
-    
     
 </div>
 
@@ -209,22 +252,6 @@
         
     </div>
     <script src="/js/main.js"></script>
-    
-    
-
-
-
-<script>
-    twikoo.init({
-        el: "#twikoo-container",
-        envId: "https://lux10032.myqnapcloud.cn:8986/",
-        region: "",
-        path: location.pathname,
-        lang: "",
-    })
-</script>
-
-
     
 </body>
 </html>

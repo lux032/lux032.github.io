@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>categories | Lux032 Blog</title>
+    <title>威联通容器自动更新方法 | Lux032 Blog</title>
     <meta name="author" content="lux032" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -33,6 +33,12 @@
 <script src="/js/lib/preview.js"></script>
 
 
+
+
+
+
+
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
 
 
 
@@ -144,25 +150,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%B8%85%E5%8D%95/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                清单
-            </a>
+            <div class="article">
+    <div>
+        <h1>威联通容器自动更新方法</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/8
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/QNAP-Docker/" style="background: #ff7d73">
+        <span class="category">
+            <a href="/categories/QNAP-Docker/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -171,18 +172,55 @@
         </span>
         
         
-        
-        <span>
-            <a href="/categories/Git-SSH/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Git SSH
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%A4%87%E5%BF%98-%E6%95%99%E7%A8%8B/" style="color: #00a596">备忘 教程</a>
+            </span>
+            
         </span>
         
-        
     </div>
+    
+    <div class="content" v-pre>
+        <p>  因为威联通的容器管理站没有定期检测自动更新容器的功能 所以使用watchtower工具来实现此功能。</p>
+<p>  对于此功能并没有经过精细的研究只能说just work。使用威联通容器工作站的创建功能添加下列yaml。</p>
+<p><code>version:&quot;3&quot;</code></p>
+<p><code>services:</code></p>
+<p><code>watchtower:</code></p>
+<p><code>image:containrrr/watchtower</code></p>
+<p><code>container_name:watchtower</code></p>
+<p><code>restart:always</code></p>
+<p><code>environment:</code></p>
+<p><code>-TZ=Asia/Shanghai</code></p>
+<p><code>volumes:</code></p>
+<p><code>-/var/run/docker.sock:/var/run/docker.sock</code></p>
+<p><code>command:nginxredis--cleanup--schedule&quot;0 0 4 * * *&quot;</code></p>
+<p>需要修改的部分为<code>command:nginxredis--cleanup--schedule&quot;0 0 4 * * *&quot;</code></p>
+<p>将command:nginxredis这部分改为你需要更新的容器名称</p>
+<p>注意是你已经建立的容器名称不是镜像名称</p>
+<p>schedule”0 0 4 * * *” 这部分是cron 格式的时间表达式</p>
+<p>该时间表达式由六个字段组成，它们按顺序表示了任务的执行时间：</p>
+<p>秒 分 时 日 月 星期 按需修改</p>
+<p>例如 0 7 * * 3</p>
+<p>此表达式为每周三早上七点更新</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
     
 </div>
 
@@ -214,6 +252,22 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "https://lux10032.myqnapcloud.cn:8986/",
+        region: "",
+        path: location.pathname,
+        lang: "",
+    })
+</script>
+
+
     
 </body>
 </html>
