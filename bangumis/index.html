@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>categories | Lux032 Blog</title>
+    <title>bangumis | Lux032 Blog</title>
     <meta name="author" content="lux032" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -33,6 +33,12 @@
 <script src="/js/lib/preview.js"></script>
 
 
+
+
+
+
+
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
 
 
 
@@ -144,23 +150,34 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%B8%85%E5%8D%95/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                清单
-            </a>
+            <div class="article">
+    <div>
+        <h1>bangumis</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/8
         </span>
         
         
     </div>
+    
+    <div class="content" v-pre>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
     
 </div>
 
@@ -192,6 +209,22 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "https://lux10032.myqnapcloud.cn:8986/",
+        region: "",
+        path: location.pathname,
+        lang: "",
+    })
+</script>
+
+
     
 </body>
 </html>
