@@ -221,11 +221,54 @@
         
         <span class="tag">
             
-            <a href="/tags/%E8%AE%A1%E5%88%92%E8%A1%A8/" style="color: #00a596">计划表</a>
+            <a href="/tags/%E8%AE%A1%E5%88%92%E8%A1%A8/" style="color: #ff7d73">计划表</a>
         </span>
         
     </div>
     <a href="/2023/10/07/blog%E5%B7%B2%E8%AE%BE%E7%BD%AE%E5%AE%8C%E6%88%90%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/10/08/%E5%A6%82%E4%BD%95%E7%BB%99hexo%E5%86%85%E5%AE%B9%E6%B7%BB%E5%8A%A0%E4%BB%A3%E7%A0%81%E7%B1%BB%E5%9E%8B/">
+        <h2 class="post-title">如何给hexo内容添加代码类型</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/8
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>使用Typora源代码模式给代码上下添加</p>
+<pre><code class="docker">
+</code></pre>
+<p>docker为代码类型 更换为需要的代码类型即可完成标注</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%A4%87%E5%BF%98/" style="color: #ff7d73">备忘</a>
+        </span>
+        
+    </div>
+    <a href="/2023/10/08/%E5%A6%82%E4%BD%95%E7%BB%99hexo%E5%86%85%E5%AE%B9%E6%B7%BB%E5%8A%A0%E4%BB%A3%E7%A0%81%E7%B1%BB%E5%9E%8B/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -235,11 +278,11 @@
     <div class="category-and-date">
         
         <span class="category">
-            <a href="/categories/QNAP-Docker/">
+            <a href="/categories/Docker/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                QNAP Docker
+                Docker
             </a>
         </span>
         
@@ -257,17 +300,28 @@
             
             <p>  因为威联通的容器管理站没有定期检测自动更新容器的功能 所以使用watchtower工具来实现此功能。</p>
 <p>  对于此功能并没有经过精细的研究只能说just work。使用威联通容器工作站的创建功能添加下列yaml。</p>
-<p><code>version:&quot;3&quot;</code></p>
-<p><code>services:</code></p>
-<p><code>watchtower:</code></p>
-<p><code>image:containrrr/watchtower</code></p>
-<p><code>container_name:watchtower</code></p>
-<p><code>restart:always</code></p>
-<p><code>environment:</code></p>
-<p><code>-TZ=Asia/Shanghai</code></p>
-<p><code>volumes:</code></p>
-<p><code>-/var/run/docker.sock:/var/run/docker.sock</code></p>
-<p><code>command:nginxredis--cleanup--schedule&quot;0 0 4 * * *&quot;</code></p>
+<pre><code class="docker">`version:&quot;3&quot;`
+
+`services:`
+
+`watchtower:`
+
+`image:containrrr/watchtower`
+
+`container_name:watchtower`
+
+`restart:always`
+
+`environment:`
+
+`-TZ=Asia/Shanghai`
+
+`volumes:`
+
+`-/var/run/docker.sock:/var/run/docker.sock`
+
+`command:nginxredis--cleanup--schedule&quot;0 0 4 * * *&quot;`
+</code></pre>
 <p>需要修改的部分为<code>command:nginxredis--cleanup--schedule&quot;0 0 4 * * *&quot;</code></p>
 <p>将command:nginxredis这部分改为你需要更新的容器名称</p>
 <p>注意是你已经建立的容器名称不是镜像名称</p>
@@ -290,7 +344,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%A4%87%E5%BF%98-%E6%95%99%E7%A8%8B/" style="color: #ff7d73">备忘 教程</a>
+            <a href="/tags/%E5%A4%87%E5%BF%98/" style="color: #00bcd4">备忘</a>
         </span>
         
     </div>
@@ -304,11 +358,11 @@
     <div class="category-and-date">
         
         <span class="category">
-            <a href="/categories/Git-SSH/">
+            <a href="/categories/Git/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                Git SSH
+                Git
             </a>
         </span>
         
@@ -342,7 +396,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%A4%87%E5%BF%98-%E6%95%99%E7%A8%8B/" style="color: #03a9f4">备忘 教程</a>
+            <a href="/tags/%E5%A4%87%E5%BF%98/" style="color: #ff7d73">备忘</a>
         </span>
         
     </div>
