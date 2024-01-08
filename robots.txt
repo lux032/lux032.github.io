@@ -2,5 +2,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qmike.top/sitemap.xml
-Sitemap: https://qmike.top/baidusitemap.xml
+Sitemap: https://032.im/sitemap.xml
+Sitemap: https://032.im/baidusitemap.xml
