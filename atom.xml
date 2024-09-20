@@ -6,7 +6,7 @@
   <link href="https://032.im/atom.xml" rel="self"/>
   
   <link href="https://032.im/"/>
-  <updated>2024-06-29T08:45:43.113Z</updated>
+  <updated>2024-09-20T15:32:35.151Z</updated>
   <id>https://032.im/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Feed Claim</title>
+    <link href="https://032.im/article/Feed%20Claim.html"/>
+    <id>https://032.im/article/Feed%20Claim.html</id>
+    <published>2024-09-19T16:00:00.000Z</published>
+    <updated>2024-09-20T15:32:35.151Z</updated>
+    
+    <content type="html"><![CDATA[<pre class="line-numbers language-none"><code class="language-none">This message is used to verify that this feed (feedId:59973571909713920) belongs to me (userId:58556088579641344). Join me in enjoying the next generation information browser https:&#x2F;&#x2F;follow.is.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;This message is used to verify that this feed (feedId:59973571909713920)</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>2024年游戏游玩计划</title>
