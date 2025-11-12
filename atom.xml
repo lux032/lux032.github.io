@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Lux032 Blog</title>
+  
+  <subtitle>节能主义 兴趣使然</subtitle>
+  <link href="https://032.im/atom.xml" rel="self"/>
+  
+  <link href="https://032.im/"/>
+  <updated>2025-11-12T06:06:56.803Z</updated>
+  <id>https://032.im/</id>
+  
+  <author>
+    <name>lux032</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2024年游戏游玩计划</title>
+    <link href="https://032.im/article/2024%E5%B9%B4%E5%BA%A6%E6%B8%B8%E6%88%8F%E8%AE%A1%E5%88%92.html"/>
+    <id>https://032.im/article/2024%E5%B9%B4%E5%BA%A6%E6%B8%B8%E6%88%8F%E8%AE%A1%E5%88%92.html</id>
+    <published>2024-04-16T16:00:00.000Z</published>
+    <updated>2025-11-12T06:06:56.803Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="因为近期实在是没有什么想写的但是放这这个博客在这里实在是感觉有些浪费于是准备把今年准备玩和已经玩了的游戏做一下总结汇总吧"><a href="#因为近期实在是没有什么想写的但是放这这个博客在这里实在是感觉有些浪费于是准备把今年准备玩和已经玩了的游戏做一下总结汇总吧" class="headerlink" title="因为近期实在是没有什么想写的但是放这这个博客在这里实在是感觉有些浪费于是准备把今年准备玩和已经玩了的游戏做一下总结汇总吧"></a>因为近期实在是没有什么想写的但是放这这个博客在这里实在是感觉有些浪费于是准备把今年准备玩和已经玩了的游戏做一下总结汇总吧</h2><h2 id="已经游玩"><a href="#已经游玩" class="headerlink" title="已经游玩"></a>已经游玩</h2><p><span style="font-size:23px;">1月 </span></p><p><span style="font-size:18px;">伊苏X -北境历险-</span></p><p><span style="font-size:18px;">瑞奇与叮当 时空跳转</span></p><p><span style="font-size:18px;"> 星球大战 绝地：幸存者</span></p><p><span style="font-size:18px;"> 战神 诸神黄昏</span></p><p><span style="font-size:18px;">总的来说一月基本上是补完了一下之前一直没玩但是想玩的ps5独占游戏</span></p><p><span style="font-size:23px;">2月 </span></p><p><span style="font-size:18px;">女神异闻录3 Reload</span></p><p><span style="font-size:18px;">二月的话基本上被P3R占据了大部分时间 其他时间大大概就是打打Dota2了</span></p><p><span style="font-size:23px;">3月 </span></p><p><span style="font-size:18px;">最终幻想7 重生</span></p><p><span style="font-size:18px;">圣兽之王</span></p><p><span style="font-size:18px;">三月的主旋律是作为我买PS5的核心原因的FINAL FANTASY VII REBIRTH 不过这游戏实在是堆了太多游戏内容 50小时以后就有些玩不动了。不过香草社的圣兽之王倒是给了我很大的惊喜，内容拿捏到位质量优秀。 </span></p><h2 id="预计游玩"><a href="#预计游玩" class="headerlink" title="预计游玩"></a>预计游玩</h2><p><span style="font-size:23px;">4月 </span></p><p><span style="font-size:18px;">剑星</span></p><p><span style="font-size:23px;">6月 </span></p><p><span style="font-size:18px;">艾尔登法环DLC 黄金树之影</span></p><p><span style="font-size:23px;">8月 </span></p><p><span style="font-size:18px;">黑神话悟空</span></p><p><span style="font-size:23px;">10月 </span></p><p><span style="font-size:18px;">暗喻幻想</span></p><h2 id="可能游玩（包括今年可能发售，有点兴趣的游戏）"><a href="#可能游玩（包括今年可能发售，有点兴趣的游戏）" class="headerlink" title="可能游玩（包括今年可能发售，有点兴趣的游戏）"></a>可能游玩（包括今年可能发售，有点兴趣的游戏）</h2><p><span style="font-size:18px;">浪人崛起</span></p><p><span style="font-size:18px;">黑帝斯2</span></p><p><span style="font-size:18px;">丝之歌</span></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;因为近期实在是没有什么想写的但是放这这个博客在这里实在是感觉有些浪费于是准备把今年准备玩和已经玩了的游戏做一下总结汇总吧&quot;&gt;&lt;a href=&quot;#因为近期实在是没有什么想写的但是放这这个博客在这里实在是感觉有些浪费于是准备把今年准备玩和已经玩了的游戏做一下总结汇总吧</summary>
+      
+    
+    
+    
+    <category term="Game" scheme="https://032.im/categories/Game/"/>
+    
+    
+    <category term="Game" scheme="https://032.im/tags/Game/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何使用Orange Pi 制作一个Plexamp Headless模块</title>
+    <link href="https://032.im/article/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Orange%20Pi%20%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AAPlexamp%20Headless%E6%A8%A1%E5%9D%97.html"/>
+    <id>https://032.im/article/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Orange%20Pi%20%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AAPlexamp%20Headless%E6%A8%A1%E5%9D%97.html</id>
+    <published>2023-12-30T16:00:00.000Z</published>
+    <updated>2025-11-12T06:06:56.807Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp-Headless模块来使用（因为比树莓派便宜"><a href="#因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp-Headless模块来使用（因为比树莓派便宜" class="headerlink" title="因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp Headless模块来使用（因为比树莓派便宜"></a>因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp Headless模块来使用（因为比树莓派便宜</h2><ul><li><span style="font-size:18px;">硬件: Orange Pi 开发板2g以上运存的版本 性能要高于树莓派3B 本人使用的是Orange Pi3 LTS 大概差不多的硬件基于linux的都可以吧。</span></li><li><span style="font-size:18px;">软件: Plexamp Headless 当然你需要一个Plex Pass的账号。</span></li></ul><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><p><span style="font-size:18px;">进入你的香橙派SSH系统,默认的账号为root，密码为orangepi。</span></p><h2 id="安装Node-JS-安装"><a href="#安装Node-JS-安装" class="headerlink" title="安装Node JS 安装"></a>安装Node JS 安装</h2><pre class="line-numbers language-none"><code class="language-none">curl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_16.x | sudo -E bash -  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><span style="font-size:18px;">运行完毕后执行命令 </span></p><pre class="line-numbers language-none"><code class="language-none">sudo apt-get install -y nodejs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><span style="font-size:18px;">一般来说到这一步就安装好了环境，如果出现报错的话根据报错来解决问题。</span></p><h2 id="安装Plexamp-Headless"><a href="#安装Plexamp-Headless" class="headerlink" title="安装Plexamp Headless"></a>安装Plexamp Headless</h2><pre class="line-numbers language-none"><code class="language-none">curl https:&#x2F;&#x2F;plexamp.plex.tv&#x2F;headless&#x2F;Plexamp-Linux-headless-v4.9.3.tar.bz2 &gt; plexamp.tar.bz2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><span style="font-size:18px;">这里的版本号可以根据目前Plex Headless的最新版本来更改。</span></p><p><span style="font-size:18px;">运行解压命令 </span></p><pre class="line-numbers language-none"><code class="language-none">tar -xvf plexamp.tar.bz2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="获取Token"><a href="#获取Token" class="headerlink" title="获取Token"></a>获取Token</h2><pre class="line-numbers language-none"><code class="language-none">node plexamp&#x2F;js&#x2F;index.js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><span style="font-size:18px;">根据提示打开<a href="https://plex.tv/claim">https://plex.tv/claim</a> 复制出现的Token，然后命名播放器名称。</span></p><p><span style="font-size:18px;">再次执行 </span></p><pre class="line-numbers language-none"><code class="language-none">node plexamp&#x2F;js&#x2F;index.js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><span style="font-size:18px;">浏览器输入你香橙派的ip+端口32500选择你要输出数字信号的声卡设备。应该就可以正常播放了。</span></p><h2 id="修改默认的plexamp-service文件"><a href="#修改默认的plexamp-service文件" class="headerlink" title="修改默认的plexamp.service文件"></a>修改默认的plexamp.service文件</h2><p><span style="font-size:18px;">因为Plexamp Headless是为树莓派设计的所以他的运行文件和香橙派的有一些区别，需要进行修改才能稳定运行。</span></p><p><span style="font-size:18px;">通过winscp或者ssh访问plexamp.service文件。</span></p><p><span style="font-size:18px;">SSH的话使用以下代码。</span></p><pre class="line-numbers language-none"><code class="language-none">nano plexamp&#x2F;plexamp.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><span style="font-size:18px;">修改文件 </span></p><pre class="line-numbers language-none"><code class="language-none">[Service]Type&#x3D;simpleUser&#x3D;piWorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;plexampExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;node &#x2F;home&#x2F;pi&#x2F;plexamp&#x2F;js&#x2F;index.jsRestart&#x3D;on-failure<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><span style="font-size:18px;">将User WorkingDirectory ExecStart三个选项进行修改，这边给一个参考。请以使用设备的实际信息为准。本人使用的开发板，我将User改为root。WorkingDirectory ExecStart两个选项改为了相对路径。因为香橙派没有home路径所以分别改为了。</span></p><pre class="line-numbers language-none"><code class="language-none">WorkingDirectory&#x3D;&#x2F;root&#x2F;plexamp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><span style="font-size:18px;">以及 </span></p><pre class="line-numbers language-none"><code class="language-none">ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;node &#x2F;root&#x2F;plexamp&#x2F;js&#x2F;index.js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="设置Plexamp-Headless自启动"><a href="#设置Plexamp-Headless自启动" class="headerlink" title="设置Plexamp Headless自启动"></a>设置Plexamp Headless自启动</h2><p><span style="font-size:18px;">首先关闭你的plexamp进程 </span></p><p><span style="font-size:18px;">依次使用以下命令 </span></p><pre class="line-numbers language-none"><code class="language-none">cd plexamp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">sudo cp plexamp.service &#x2F;lib&#x2F;systemd&#x2F;system&#x2F; <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">sudo systemctl daemon-reload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">sudo systemctl enable plexamp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">sudo systemctl start plexamp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><span style="font-size:18px;">重启香橙派查看是否成功生效。</span></p><p><span style="font-size:18px;">这样应该就完成了。</span></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp-Headless模块来使用（因为比树莓派便宜&quot;&gt;&lt;a href=&quot;#因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp-He</summary>
+      
+    
+    
+    
+    <category term="DIY硬件" scheme="https://032.im/categories/DIY%E7%A1%AC%E4%BB%B6/"/>
+    
+    
+    <category term="Music" scheme="https://032.im/tags/Music/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The International 2023 赛后记录</title>
+    <link href="https://032.im/article/ti12%E8%B5%9B%E5%90%8E.html"/>
+    <id>https://032.im/article/ti12%E8%B5%9B%E5%90%8E.html</id>
+    <published>2023-10-29T16:00:00.000Z</published>
+    <updated>2025-11-12T06:06:56.804Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="TI12-今天也打完了稍微做点记录吧"><a href="#TI12-今天也打完了稍微做点记录吧" class="headerlink" title="TI12 今天也打完了稍微做点记录吧"></a>TI12 今天也打完了稍微做点记录吧</h2><p><span style="font-size:18px;">作为观众来说的话今年看得还算尽兴吧。从赛季初的假赛开挂风波，到完美世界的动手术式禁赛选手，今年的形式所有人都觉得不容乐观。但是AR和LGD的表现都出乎了我个人的预期。两队进入到了四强给了中国观众一个做梦的机会，AR的表现走到这一步可以说已经是一抹蓝色的奇迹，虽然最后并没有以一个完美的童话收尾。今年终究是属于雪碧的一年。总结来说的话大概是有些不甘又有些释然的一年。希望下一年今年打出来的新人可以继续进化吧。CNDOTA举盾可能已经是一种奢望了吧，但是未来谁知道呢。可能今年会是CN赛区新的起点也说不定。总之今年的口号：Make CN Dota Great Again！大概是做到了吧。</span></p><h2 id="AR"><a href="#AR" class="headerlink" title="AR"></a>AR</h2><center><iframe width="800" height="450" src="https://www.youtube.com/embed/m3UyronlHlk?si=PDMV8_9GGjlNmxtK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><center><h3 align="center">TI12 Azure Ray - Walkout</h3><iframe width="800" height="450"  src="https://www.youtube.com/embed/cPtpjGwofq4?si=6v1Gdombe23uvmno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><h3 align="center"> Playoff Profiles - Azure Ray</h3><iframe width="800" height="450" src="https://www.youtube.com/embed/Tto34te7umQ?si=KIF3pLf9wMp-5bMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><h3 align="center">Finals Profile - Azure Ray</h3><p><img src="/img/AR-01.jpg" alt="AR入场" title="AR入场"></p><h3 align="center">AR入场</h3><p><img src="/img/AR-02.jpg" alt="森哥" title="森哥"></p><h3 align="center">森哥</h3><p><img src="/img/AR-03.jpg" alt="李斯" title="李斯"></p><h3 align="center">李斯</h3><p><img src="/img/AR-04.jpg" alt="AR众人" title="AR众人"></p><h3 align="center"> AR众人</h3><h2 id="LGD"><a href="#LGD" class="headerlink" title="LGD"></a>LGD</h2><iframe width="800" height="450" src="https://www.youtube.com/embed/qiFA22CUk1M?si=smswYN5L4zSn7BcD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><h3 align="center">TI12 LGD Gaming - Walkout</h3><iframe width="800" height="450" src="https://www.youtube.com/embed/JjMROPrTvgc?si=ru3o-rCTVhDe5UxW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><h3 align="center"> Playoff Profiles - LGD Gaming</h3><iframe width="800" height="450"" src="https://www.youtube.com/embed/yLRwgCKZpEA?si=Gy0oCNjgQ-pek93g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><h3 align="center">Finals Profile - LGD Gaming</h3><p><img src="/img/LGD-01.jpg" alt="内战" title="内战"></p><h3 align="center"> 内战</h3><p><img src="/img/LGD-02.jpg" alt="失意的LGD" title="失意的LGD"></p><h3 align="center"> 失意的LGD</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;TI12-今天也打完了稍微做点记录吧&quot;&gt;&lt;a href=&quot;#TI12-今天也打完了稍微做点记录吧&quot; class=&quot;headerlink&quot; title=&quot;TI12 今天也打完了稍微做点记录吧&quot;&gt;&lt;/a&gt;TI12 今天也打完了稍微做点记录吧&lt;/h2&gt;&lt;p&gt;&lt;span </summary>
+      
+    
+    
+    
+    <category term="TI12" scheme="https://032.im/categories/TI12/"/>
+    
+    
+    <category term="Dota2" scheme="https://032.im/tags/Dota2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【听音记录02】Reol-BLACK BOX</title>
+    <link href="https://032.im/article/%E5%90%AC%E9%9F%B3%E8%AE%B0%E5%BD%9502.html"/>
+    <id>https://032.im/article/%E5%90%AC%E9%9F%B3%E8%AE%B0%E5%BD%9502.html</id>
+    <published>2023-10-20T16:00:00.000Z</published>
+    <updated>2025-11-12T06:06:56.806Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="听音记录02"><a href="#听音记录02" class="headerlink" title="听音记录02"></a>听音记录02</h2><ul><li><p>听音设备: HIFAMAN ARYA V2</p></li><li><p>前端: FiiO K9pro ESS版</p></li><li><p>听音软件: Roon</p></li><li><p>媒体文件规格: Flac 48Hz 24bit</p></li><li><p>媒体文件来源: Mora</p></li><li><p>记录日志： 之前就在期待的专辑，Reol久违的使用了Giga的编曲。虽然不少是之前推出的单曲但是顺序播放下来感觉整体专辑的完成度还不错。因为不太想买CD了所以这次在Mora购入了音源。</p></li><li><iframe width="560" height="315" src="https://www.youtube.com/embed/i6_IijehxIk?si=YlOxoTyQ0NFdXHuL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li></ul><h2 id="Lyric"><a href="#Lyric" class="headerlink" title="Lyric"></a>Lyric</h2><p>DDD</p><p>作词：Reol<br>作曲：Reol・Giga</p><p>Ya I’m a Maker and Breaker<br>Giga Reol　任せな乗っかれ</p><p>Yo Ladies and Gentlemen<br>お待ちどう夜が明けてく<br>楽しいこと限定　それこそが原点</p><p>うちらが気になるシスタ<br>まあまあ自分らのペースさフリーダム<br>思いつきに引火　出る出る金货<br>みんな游び场スパシーバ　いいないいな</p><p>锖びたしきたり解体　生きた词を売买<br>いつもの今日に干杯　音から音へ浮浪<br>Oh Mammy,　无问题　やらずにはいられなくない？<br>I’m in control of my own fate.</p><p>I’m a Breaker<br>DDD DDD DDD DDD DDD DDD<br>やなことやめ　ここから无礼讲</p><p>踊るだけ全部风任せ<br>涙も笑ったれほらあっかんべー<br>ついてきな、的な<br>とまらん　とまれねぇわ</p><p>これ合法　常ノージョーク<br>得るより与えるほうが天职<br>リファレンス　経験基づく余裕</p><p>アンビバレンス　隠すビートの奥<br>君も乗ってけにーちゃん<br>道草がなきゃつまらんわ　わー<br>お隣ベスティ　不屈の精神<br>见知った景色辟易　前进</p><p>この青春はあげられないの<br>仆にだけ広がるこの宇宙ただ梦中<br>ああ　ここがいつもはじまり</p><p>Oh Daddy,　超难解　でもやってみて纳得したい<br>This is the way of my life.</p><p>DALA DING, DALA DING？</p><p>I’m a Maker<br>DDD DDD DDD DDD DDD DDD<br>Yah Man, Pull up, Big up,あんたがBREDDA</p><p>游ぶだけ热さを忘れ　一度休んで水に流せ<br>置いてきな的な　Na Ready？<br>着いてきなベイビー　まだまだ</p><p>Hey　过去に未だ囚われの身？<br>お楽しみならこれから(I’m a Breaker)<br>とまれん　とまれねぇわ<br>Hey　游び楽しめたもん胜ち、自由の身 (Ya We are Maker)</p><p>たまらん　たまらん　たまらねー<br>たまらん　たまらねぇわ</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;听音记录02&quot;&gt;&lt;a href=&quot;#听音记录02&quot; class=&quot;headerlink&quot; title=&quot;听音记录02&quot;&gt;&lt;/a&gt;听音记录02&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;听音设备: HIFAMAN ARYA V2&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;前端: Fi</summary>
+      
+    
+    
+    
+    <category term="听音记录" scheme="https://032.im/categories/%E5%90%AC%E9%9F%B3%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Music" scheme="https://032.im/tags/Music/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给Hexo追番插件展示页面添加顶部图的方法</title>
+    <link href="https://032.im/article/%E7%BB%99hexo%E8%BF%BD%E7%95%AA%E6%8F%92%E4%BB%B6%E5%B1%95%E7%A4%BA%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0%E9%A1%B6%E9%83%A8%E5%9B%BE%E7%9A%84%E6%96%B9%E6%B3%95.html"/>
+    <id>https://032.im/article/%E7%BB%99hexo%E8%BF%BD%E7%95%AA%E6%8F%92%E4%BB%B6%E5%B1%95%E7%A4%BA%E9%A1%B5%E9%9D%A2%E6%B7%BB%E5%8A%A0%E9%A1%B6%E9%83%A8%E5%9B%BE%E7%9A%84%E6%96%B9%E6%B3%95.html</id>
+    <published>2023-10-11T16:00:00.000Z</published>
+    <updated>2025-11-12T06:06:56.809Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="找到-config-yml设置过的项目"><a href="#找到-config-yml设置过的项目" class="headerlink" title="找到_config.yml设置过的项目"></a>找到_config.yml设置过的项目</h3><p>.bangumi: # 追番设置<br>  enable: true<br>  source: bgm<br> ………………………………<br>  srcValue: ‘<strong>image</strong>‘<br>  lazyloadAttrName: ‘data-src&#x3D;<strong>image</strong>‘<br>  loading:<br>  metaColor:<br>  color:<br>  webp:<br>  progress:<br>  extraOrder:<br>  order:<br>  <u>extra_options:</u><br>  key: value</p><h3 id="找到标注出来的这个-extra-options-的部分"><a href="#找到标注出来的这个-extra-options-的部分" class="headerlink" title="找到标注出来的这个 extra_options:的部分"></a>找到标注出来的这个 extra_options:的部分</h3><p>添加需要的代码具体情况要按照使用的hexo主题来添加</p><p>以Butterfly主题 为例顶部图的添加格式为  top_img:  ‘图片路径或链接’</p><p>所以添加的代码为</p><p> extra_options:<br>  top_img: ‘&#x2F;img&#x2F;topimg09.jpg’</p><p>需要注意的一点是 extra_options这个选项在设置中有两个一个是追番列表的页面一个是追剧列表的页面设置需要分别设置，如果只设置了其中一个另一个是不会沿用生效的。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;找到-config-yml设置过的项目&quot;&gt;&lt;a href=&quot;#找到-config-yml设置过的项目&quot; class=&quot;headerlink&quot; title=&quot;找到_config.yml设置过的项目&quot;&gt;&lt;/a&gt;找到_config.yml设置过的项目&lt;/h3&gt;&lt;p&gt;.b</summary>
+      
+    
+    
+    
+    
+    <category term="备忘" scheme="https://032.im/tags/%E5%A4%87%E5%BF%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本地流媒体音乐库方案对比</title>
+    <link href="https://032.im/article/%E6%9C%AC%E5%9C%B0%E9%9F%B3%E4%B9%90%E6%B5%81%E5%AA%92%E4%BD%93%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94.html"/>
+    <id>https://032.im/article/%E6%9C%AC%E5%9C%B0%E9%9F%B3%E4%B9%90%E6%B5%81%E5%AA%92%E4%BD%93%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94.html</id>
+    <published>2023-10-09T16:00:00.000Z</published>
+    <updated>2025-11-12T06:06:56.808Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Audio-Station"><a href="#Audio-Station" class="headerlink" title="Audio Station"></a>Audio Station</h2><h3 id="这个是群晖内置的一个音乐库方案，在我第一次尝试使用黑群晖作为nas的时候使用过。"><a href="#这个是群晖内置的一个音乐库方案，在我第一次尝试使用黑群晖作为nas的时候使用过。" class="headerlink" title="这个是群晖内置的一个音乐库方案，在我第一次尝试使用黑群晖作为nas的时候使用过。"></a>这个是群晖内置的一个音乐库方案，在我第一次尝试使用黑群晖作为nas的时候使用过。</h3><p>优点： 内置软件不需要付费不需要部署。使用流畅度还算好。</p><p>缺点： 群晖威联通这类国际nas厂家特有的对自身提供软件生态的敷衍，无论是UI还是交互体验都属于很糟糕的那一档。基本没有多少自定义设置。无自带音乐刮削器。</p><p>总结为只能说能用吧。</p><h2 id="Plexamp"><a href="#Plexamp" class="headerlink" title="Plexamp"></a>Plexamp</h2><h3 id="这个Plexamp严格来说应该算是Plex这个大型本地数据库的一个赠品，不过经过常年的更新体验算是比较优秀。初次使用会让人眼前一亮。但是本人长期使用下来也发现了不少诟病的地方。"><a href="#这个Plexamp严格来说应该算是Plex这个大型本地数据库的一个赠品，不过经过常年的更新体验算是比较优秀。初次使用会让人眼前一亮。但是本人长期使用下来也发现了不少诟病的地方。" class="headerlink" title="这个Plexamp严格来说应该算是Plex这个大型本地数据库的一个赠品，不过经过常年的更新体验算是比较优秀。初次使用会让人眼前一亮。但是本人长期使用下来也发现了不少诟病的地方。"></a>这个Plexamp严格来说应该算是Plex这个大型本地数据库的一个赠品，不过经过常年的更新体验算是比较优秀。初次使用会让人眼前一亮。但是本人长期使用下来也发现了不少诟病的地方。</h3><p>优点： 目前已经是免费软件了，只要有一个Plex账号就可以用，当然一些功能还是需要Plex Pass账户才能解锁。不过个人认为那些功能是可有可无。移动版UI可以说是这些软件里面最好的。目前也支持中文了。因为是配合Plex库使用的所以也不需要额外部署服务器端这点算是比较的方便。拥有较好的音乐刮削功能。</p><p>缺点： 主要集中在Windows客户端上面，更新了三四年依然不支持比如WASAPI和ASIO这类独占音频模式导致这软件的播放体验很糟糕，特别是在你使用专业耳放和高端耳机的时候明显会被fb2000和roon这类支持独占音频的软件拉开巨大的差距。Windows的客户端UI没有进行独立的设计沿用了移动端的整体交互逻辑，导致使用体验极其糟糕。</p><h2 id="Roon"><a href="#Roon" class="headerlink" title="Roon"></a>Roon</h2><h3 id="说到专业的本地流媒体方案，那肯定绕不开Roon。作为现在最受Hifi圈认可的音乐库方案。Roon实际上在各方面做到了相当完美的程度。"><a href="#说到专业的本地流媒体方案，那肯定绕不开Roon。作为现在最受Hifi圈认可的音乐库方案。Roon实际上在各方面做到了相当完美的程度。" class="headerlink" title="说到专业的本地流媒体方案，那肯定绕不开Roon。作为现在最受Hifi圈认可的音乐库方案。Roon实际上在各方面做到了相当完美的程度。"></a>说到专业的本地流媒体方案，那肯定绕不开Roon。作为现在最受Hifi圈认可的音乐库方案。Roon实际上在各方面做到了相当完美的程度。</h3><p>优点： 拥有几乎完美的音乐刮削功能。支持大量的流媒体来增强本地的音乐库。多端支持和优秀的UI设计。在Windows客户端上支持全部独占音频模式，可以给到相当好的播放体验。拥有自己的Roon Ready生态圈如果拥有相应的设备，直接进行网络串流的体验相当的好。之前需要本地部署vpn才能支持外网串流现在更新2.0以后这个缺点也消失了。</p><p>缺点： 其实Roon的缺点真的不多了，Roon几乎在让你享受音乐方面做到了尽善尽美，硬要说的话移动端的体验大概是不如plexamp的。流畅度对比起来有差距，但是Roon本身的功能要更加复杂似乎可以接受。然后就是。。。这东西太贵了829刀实在是太夸张。</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>其实主流方案还有不少比如Emby或者Jellyfin这类媒体客串方案，其他开源方案也有不少轻量的解决方案，但是本人做了综合对比以后，目前体验最佳的大概还是Plexmap和Roon这两个了。总结来说从我主观的角度出发低成本使用，不太要求Windows平台播放质量使用移动端更多的话用Plexamp。如果你是Hifi发烧友的话大概Roon是一个很好的毕业方案。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Audio-Station&quot;&gt;&lt;a href=&quot;#Audio-Station&quot; class=&quot;headerlink&quot; title=&quot;Audio Station&quot;&gt;&lt;/a&gt;Audio Station&lt;/h2&gt;&lt;h3 id=&quot;这个是群晖内置的一个音乐库方案，在我第一次</summary>
+      
+    
+    
+    
+    <category term="软件对比" scheme="https://032.im/categories/%E8%BD%AF%E4%BB%B6%E5%AF%B9%E6%AF%94/"/>
+    
+    
+    <category term="Music" scheme="https://032.im/tags/Music/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【听音记录01】Ayase-幽霊東京</title>
+    <link href="https://032.im/article/%E5%90%AC%E9%9F%B3%E8%AE%B0%E5%BD%9501.html"/>
+    <id>https://032.im/article/%E5%90%AC%E9%9F%B3%E8%AE%B0%E5%BD%9501.html</id>
+    <published>2023-10-08T16:00:00.000Z</published>
+    <updated>2025-11-12T06:06:56.805Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="尝试给自己日常听的曲子做一个记录，方便进行回顾。"><a href="#尝试给自己日常听的曲子做一个记录，方便进行回顾。" class="headerlink" title="尝试给自己日常听的曲子做一个记录，方便进行回顾。"></a>尝试给自己日常听的曲子做一个记录，方便进行回顾。</h2><ul><li>听音设备: HIFAMAN ARYA V2</li><li>前端: FiiO K9pro ESS版</li><li>听音软件: Roon</li><li>媒体文件规格: Flac 48Hz 24bit</li><li>媒体文件来源: Redacted</li><li>记录日志： 在油管收到了这个Ayase.ver的幽灵东京的推送觉得挺好听的，然后尝试在几个大型音乐PT站找这首歌的资源。在JPOP和OPS上只有CD音质的文件。在Red看到了48Hz 24bit的文件但是我对这文件是否为HQplayer这类工具进行升频得到的表示怀疑。。。姑且记录一下。</li><li><iframe width="560" height="315" src="https://www.youtube.com/embed/DtBoAqkIJzI?si=A70K_MGrI76akhHj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li></ul><h2 id="Lyric"><a href="#Lyric" class="headerlink" title="Lyric"></a>Lyric</h2><p>幽霊東京</p><p>燦然と輝く街の灯り<br>対照的な僕を見下ろす<br>あのビルの間を抜けて<br>色付き出したネオンと混じって<br>僕の時間とこの世界をトレード<br>夜に沈む</p><p>終電で家路を辿る僕の<br>目に映るガラス窓に居たのは<br>夢見た自分じゃなくて<br>今にも泣き出してしまいそうな<br>暗闇の中独りただ迷っている<br>哀しい人</p><p>大丈夫、いつか大丈夫になる<br>なんて思う日々を幾つ重ねた<br>今日だって独り東京の景色に透ける僕は<br>幽霊みたいだ</p><p>失うことに慣れていく中で<br>忘れてしまったあの願いさえも<br>思い出した時に<br>涙が落ちたのは<br>この街がただ<br>余りにも眩しいから</p><p>散々だって笑いながら嘆く<br>退廃的な日々の中<br>あの日の想いがフラッシュバック<br>気付けば朝まで開くロジック<br>僕の言葉を音に乗せて何度でも</p><p>失うことに慣れていく中で<br>忘れてしまったあの日々でさえも<br>それでもまだ先へ<br>なんて思えるのは<br>君がいるから</p><p>ねえ<br>こんな寂しい街で<br>ねえ</p><p>燦然と輝く街の灯り<br>対照的な僕を見下ろす<br>あのビルの先、手を伸ばして<br>あの日夢見た景色をなぞって<br>僕の時間とこの世界をトレード<br>明日を呼ぶ</p><p>失うことに慣れていく中で<br>失くさずにいた大事な想いを<br>抱き締めたら不意に<br>涙が落ちたのは<br>この街でまだ<br>生きていたいと思うから</p><p>君もそうでしょ</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;尝试给自己日常听的曲子做一个记录，方便进行回顾。&quot;&gt;&lt;a href=&quot;#尝试给自己日常听的曲子做一个记录，方便进行回顾。&quot; class=&quot;headerlink&quot; title=&quot;尝试给自己日常听的曲子做一个记录，方便进行回顾。&quot;&gt;&lt;/a&gt;尝试给自己日常听的曲子做一个</summary>
+      
+    
+    
+    
+    <category term="听音记录" scheme="https://032.im/categories/%E5%90%AC%E9%9F%B3%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Music" scheme="https://032.im/tags/Music/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Hetzner使用Debian10服务器架设PT盒子的方法</title>
+    <link href="https://032.im/article/%E5%9C%A8Hetzner%E4%BD%BF%E7%94%A8Debian10%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E8%AE%BEPT%E7%9B%92%E5%AD%90%E7%9A%84%E6%96%B9%E6%B3%95.html"/>
+    <id>https://032.im/article/%E5%9C%A8Hetzner%E4%BD%BF%E7%94%A8Debian10%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E8%AE%BEPT%E7%9B%92%E5%AD%90%E7%9A%84%E6%96%B9%E6%B3%95.html</id>
+    <published>2023-10-08T06:41:04.000Z</published>
+    <updated>2025-11-12T06:06:56.806Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Hetzner选择服务器配置CPX21</p><p>在配置界面选择随机ssh密码</p><p>等待邮箱收到ssh密码信息后</p><p>通过ssh软件连接到vps使用jerry048&#x2F;Dedicated-Seedbox项目的一键脚本</p><p><code>bash &lt;(wget -qO- https://raw.githubusercontent.com/jerry048/Dedicated-Seedbox/main/Install.sh) user password 1024</code></p><p>user和password 替换为自己的信息 这里的用户名和密码为QB的登录账户</p><p>使用ssh连接到服务器 选择相应的qb版本 安装bbr分流服务</p><p>安装完成后输入reboot重启服务器</p><p>qb的登录地址为服务器ip的8080端口</p><p>登录qb后设置为中文界面 在高级设置中将磁盘io调整为16 </p><p>即可开始使用</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在Hetzner选择服务器配置CPX21&lt;/p&gt;
+&lt;p&gt;在配置界面选择随机ssh密码&lt;/p&gt;
+&lt;p&gt;等待邮箱收到ssh密码信息后&lt;/p&gt;
+&lt;p&gt;通过ssh软件连接到vps使用jerry048&amp;#x2F;Dedicated-Seedbox项目的一键脚本&lt;/p&gt;
+&lt;p&gt;&lt;cod</summary>
+      
+    
+    
+    
+    
+    <category term="备忘" scheme="https://032.im/tags/%E5%A4%87%E5%BF%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何给Hexo内容添加代码类型</title>
+    <link href="https://032.im/article/%E5%A6%82%E4%BD%95%E7%BB%99hexo%E5%86%85%E5%AE%B9%E6%B7%BB%E5%8A%A0%E4%BB%A3%E7%A0%81%E7%B1%BB%E5%9E%8B.html"/>
+    <id>https://032.im/article/%E5%A6%82%E4%BD%95%E7%BB%99hexo%E5%86%85%E5%AE%B9%E6%B7%BB%E5%8A%A0%E4%BB%A3%E7%A0%81%E7%B1%BB%E5%9E%8B.html</id>
+    <published>2023-10-08T06:31:37.000Z</published>
+    <updated>2025-11-12T06:06:56.807Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用Typora源代码模式给代码上下添加</p><pre class="line-numbers language-docker" data-language="docker"><code class="language-docker"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>docker为代码类型 更换为需要的代码类型即可完成标注</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;使用Typora源代码模式给代码上下添加&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-docker&quot; data-language=&quot;docker&quot;&gt;&lt;code class=&quot;language-docker&quot;&gt;&lt;span aria-hidden</summary>
+      
+    
+    
+    
+    
+    <category term="备忘" scheme="https://032.im/tags/%E5%A4%87%E5%BF%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>威联通容器自动更新方法</title>
+    <link href="https://032.im/article/%E5%A8%81%E8%81%94%E9%80%9A%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95.html"/>
+    <id>https://032.im/article/%E5%A8%81%E8%81%94%E9%80%9A%E5%AE%B9%E5%99%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95.html</id>
+    <published>2023-10-08T05:21:41.000Z</published>
+    <updated>2025-11-12T06:06:56.808Z</updated>
+    
+    <content type="html"><![CDATA[<p>  因为威联通的容器管理站没有定期检测自动更新容器的功能 所以使用watchtower工具来实现此功能。</p><p>  对于此功能并没有经过精细的研究只能说just work。使用威联通容器工作站的创建功能添加下列yaml。</p><pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">`version:"3"``services:``watchtower:``image:containrrr/watchtower``container_name:watchtower``restart:always``environment:``-TZ=Asia/Shanghai``volumes:``-/var/run/docker.sock:/var/run/docker.sock``command:nginxredis--cleanup--schedule"0 0 4 * * *"`<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>需要修改的部分为<code>command:nginxredis--cleanup--schedule&quot;0 0 4 * * *&quot;</code></p><p>将command:nginxredis这部分改为你需要更新的容器名称</p><p>注意是你已经建立的容器名称不是镜像名称</p><p>schedule”0 0 4 * * *” 这部分是cron 格式的时间表达式</p><p>该时间表达式由六个字段组成，它们按顺序表示了任务的执行时间：</p><p>秒 分 时 日 月 星期 按需修改</p><p>例如 0 7 * * 3</p><p>此表达式为每周三早上七点更新</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;  因为威联通的容器管理站没有定期检测自动更新容器的功能 所以使用watchtower工具来实现此功能。&lt;/p&gt;
+&lt;p&gt;  对于此功能并没有经过精细的研究只能说just work。使用威联通容器工作站的创建功能添加下列yaml。&lt;/p&gt;
+&lt;pre class=&quot;line-n</summary>
+      
+    
+    
+    
+    <category term="Docker" scheme="https://032.im/categories/Docker/"/>
+    
+    
+    <category term="备忘" scheme="https://032.im/tags/%E5%A4%87%E5%BF%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设置Git对Github进行SSH传输时候使用443端口</title>
+    <link href="https://032.im/article/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8git%E5%AF%B9github%E8%BF%9B%E8%A1%8C%E4%BC%A0%E8%BE%93%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8443%E7%AB%AF%E5%8F%A3.html"/>
+    <id>https://032.im/article/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8git%E5%AF%B9github%E8%BF%9B%E8%A1%8C%E4%BC%A0%E8%BE%93%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8443%E7%AB%AF%E5%8F%A3.html</id>
+    <published>2023-10-08T05:11:12.000Z</published>
+    <updated>2025-11-12T06:06:56.807Z</updated>
+    
+    <content type="html"><![CDATA[<p>在用户文件夹的隐藏目录.ssh文件夹创建一个记事本写入以下内容</p><p><code>Host github.com</code><br><code>Hostname ssh.github.com</code><br><code>Port 443</code></p><p>重命名为无扩展名的config</p><p>此方法用于解决宽带或代理线路封禁22端口导致git无法正常推送给github的情况</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在用户文件夹的隐藏目录.ssh文件夹创建一个记事本写入以下内容&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Host github.com&lt;/code&gt;&lt;br&gt;&lt;code&gt;Hostname ssh.github.com&lt;/code&gt;&lt;br&gt;&lt;code&gt;Port 443&lt;/code&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Git" scheme="https://032.im/categories/Git/"/>
+    
+    
+    <category term="备忘" scheme="https://032.im/tags/%E5%A4%87%E5%BF%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Blog已设置完成的项目列表</title>
+    <link href="https://032.im/article/blog%E5%B7%B2%E8%AE%BE%E7%BD%AE%E5%AE%8C%E6%88%90%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8.html"/>
+    <id>https://032.im/article/blog%E5%B7%B2%E8%AE%BE%E7%BD%AE%E5%AE%8C%E6%88%90%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8.html</id>
+    <published>2023-10-07T07:49:28.000Z</published>
+    <updated>2025-11-12T06:06:56.803Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>添加博客主题</li><li>修改博客头像和背景</li><li>修改博客载入动画</li><li>设置个人信息图标 简介 链接</li><li>完成域名绑定</li><li>设置评论区功能</li><li>添加about tag categories页面</li><li>添加主页live2d插件</li><li>添加随机文章封面</li><li>添加页面顶部图</li><li>更换博客域名到032.im</li><li>将博客dns托管到dnspod</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;添加博客主题&lt;/li&gt;
+&lt;li&gt;修改博客头像和背景&lt;/li&gt;
+&lt;li&gt;修改博客载入动画&lt;/li&gt;
+&lt;li&gt;设置个人信息图标 简介 链接&lt;/li&gt;
+&lt;li&gt;完成域名绑定&lt;/li&gt;
+&lt;li&gt;设置评论区功能&lt;/li&gt;
+&lt;li&gt;添加about tag categorie</summary>
+      
+    
+    
+    
+    <category term="清单" scheme="https://032.im/categories/%E6%B8%85%E5%8D%95/"/>
+    
+    
+    <category term="计划表" scheme="https://032.im/tags/%E8%AE%A1%E5%88%92%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>测试文章</title>
+    <link href="https://032.im/article/test.html"/>
+    <id>https://032.im/article/test.html</id>
+    <published>2023-10-07T07:18:19.000Z</published>
+    <updated>2025-11-12T06:06:56.804Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一篇hexo博客的测试文章</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;这是一篇hexo博客的测试文章&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://032.im/article/hello-world.html"/>
+    <id>https://032.im/article/hello-world.html</id>
+    <published>2023-10-06T16:00:00.000Z</published>
+    <updated>2025-11-12T06:06:56.804Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
