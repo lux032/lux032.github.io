@@ -155,15 +155,6 @@
   </url>
   
   <url>
-    <loc>https://032.im/about/index.html</loc>
-    
-    <lastmod>2024-06-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://032.im/categories/index.html</loc>
     
     <lastmod>2024-06-29</lastmod>
@@ -174,6 +165,15 @@
   
   <url>
     <loc>https://032.im/link/index.html</loc>
+    
+    <lastmod>2024-06-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://032.im/about/index.html</loc>
     
     <lastmod>2024-06-29</lastmod>
     
@@ -270,13 +270,6 @@
   </url>
   
   <url>
-    <loc>https://032.im/tags/Figure/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://032.im/tags/%E6%B8%B8%E8%AE%B0/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -306,6 +299,13 @@
   
   <url>
     <loc>https://032.im/tags/Live/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://032.im/tags/Figure/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -370,13 +370,6 @@
   </url>
   
   <url>
-    <loc>https://032.im/categories/%E6%89%8B%E5%8A%9E%E5%B1%95%E7%A4%BA/</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://032.im/categories/%E6%B8%B8%E8%AE%B0/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -385,6 +378,13 @@
   
   <url>
     <loc>https://032.im/categories/%E8%BD%AF%E4%BB%B6%E5%AF%B9%E6%AF%94/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://032.im/categories/%E6%89%8B%E5%8A%9E%E5%B1%95%E7%A4%BA/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
