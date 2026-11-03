@@ -1,26 +1,174 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>威联通容器自动更新方法 | Lux032 Blog</title><meta name="author" content="lux032"><meta name="copyright" content="lux032"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="因为威联通的容器管理站没有定期检测自动更新容器的功能 所以使用watchtower工具来实现此功能。   对于此功能并没有经过精细的研究只能说just work。使用威联通容器工作站的创建功能添加下列yaml。 &#96;version:&quot;3&quot;&#96;  &#96;services:&#96;  &#96;watchtower:&#96;  &#96;image:containrrr&#x2F;watchtower&#96;  &#96;container_name:wa">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>威联通容器自动更新方法 | Lux032 Blog</title><meta name="author" content="lux032"><meta name="copyright" content="lux032"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="因为威联通的容器管理站没有定期检测自动更新容器的功能 所以使用watchtower工具来实现此功能。 对于此功能并没有经过精细的研究只能说just work。使用威联通容器工作站的创建功能添加下列yaml。 version: &quot;3&quot; services:   watchtower:     image: containrrr&#x2F;watchtower     container_name: watcht">
 <meta property="og:type" content="article">
 <meta property="og:title" content="威联通容器自动更新方法">
 <meta property="og:url" content="https://032.im/posts/a25dfa24/index.html">
 <meta property="og:site_name" content="Lux032 Blog">
-<meta property="og:description" content="因为威联通的容器管理站没有定期检测自动更新容器的功能 所以使用watchtower工具来实现此功能。   对于此功能并没有经过精细的研究只能说just work。使用威联通容器工作站的创建功能添加下列yaml。 &#96;version:&quot;3&quot;&#96;  &#96;services:&#96;  &#96;watchtower:&#96;  &#96;image:containrrr&#x2F;watchtower&#96;  &#96;container_name:wa">
+<meta property="og:description" content="因为威联通的容器管理站没有定期检测自动更新容器的功能 所以使用watchtower工具来实现此功能。 对于此功能并没有经过精细的研究只能说just work。使用威联通容器工作站的创建功能添加下列yaml。 version: &quot;3&quot; services:   watchtower:     image: containrrr&#x2F;watchtower     container_name: watcht">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://032.im/img/default_bg08.jpg">
+<meta property="og:image" content="https://032.im/img/default_bg08.webp">
 <meta property="article:published_time" content="2023-10-08T05:21:41.000Z">
-<meta property="article:modified_time" content="2025-11-13T04:28:18.000Z">
+<meta property="article:modified_time" content="2023-10-08T05:21:41.000Z">
 <meta property="article:author" content="lux032">
-<meta property="article:tag" content="备忘">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="威联通">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://032.im/img/default_bg08.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://032.im/posts/a25dfa24/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://032.im/img/default_bg08.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "威联通容器自动更新方法",
+  "url": "https://032.im/posts/a25dfa24/",
+  "image": "https://032.im/img/default_bg08.webp",
+  "datePublished": "2023-10-08T05:21:41.000Z",
+  "dateModified": "2023-10-08T05:21:41.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "lux032",
+      "url": "https://032.im"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://032.im/posts/a25dfa24/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
-  localSearch: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
   copy: {
     success: '复制成功',
-    error: '复制错误',
+    error: '复制失败',
     noSupport: '浏览器不支持'
   },
   relativeDate: {
@@ -38,14 +186,12 @@
   copyright: undefined,
   lightbox: 'fancybox',
   Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
   },
   isPhotoFigcaption: false,
-  islazyload: true,
+  islazyloadPlugin: true,
   isAnchor: false,
   percent: {
     toc: true,
@@ -54,194 +200,105 @@
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: '威联通容器自动更新方法',
-  isPost: true,
-  isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-11-13 12:28:18'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="Lux032 Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-tv"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/default_bg08.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Lux032 Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">威联通容器自动更新方法</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-tv"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">威联通容器自动更新方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-08T05:21:41.000Z" title="发表于 2023-10-08 13:21:41">2023-10-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-08T05:21:41.000Z" title="更新于 2023-10-08 13:21:41">2023-10-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/">折腾笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">248</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:730,&quot;messagePrev&quot;:&quot;本文最后更新于&quot;,&quot;messageNext&quot;:&quot;天前，其中的信息可能已经过时。&quot;,&quot;postUpdate&quot;:&quot;2023-10-08 13:21:41&quot;}" hidden></div><p>因为威联通的容器管理站没有定期检测自动更新容器的功能 所以使用watchtower工具来实现此功能。</p>
+<p>对于此功能并没有经过精细的研究只能说just work。使用威联通容器工作站的创建功能添加下列yaml。</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">"3"</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">watchtower</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> containrrr/watchtower
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> watchtower
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> TZ=Asia/Shanghai
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> /var/run/docker.sock<span class="token punctuation">:</span>/var/run/docker.sock
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> nginx redis <span class="token punctuation">-</span><span class="token punctuation">-</span>cleanup <span class="token punctuation">-</span><span class="token punctuation">-</span>schedule "0 0 4 * * <span class="token important">*"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
-      const link = document.createElement('link')
-      link.rel = 'stylesheet'
-      link.href = url
-      if (id) link.id = id
-      link.onerror = reject
-      link.onload = link.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        link.onload = link.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(link)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="Lux032 Blog" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-tv"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/default_bg08.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Lux032 Blog"><span class="site-name">Lux032 Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-tv"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">威联通容器自动更新方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-08T05:21:41.000Z" title="发表于 2023-10-08 13:21:41">2023-10-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-11-13T04:28:18.000Z" title="更新于 2025-11-13 12:28:18">2025-11-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Docker/">Docker</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="威联通容器自动更新方法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>  因为威联通的容器管理站没有定期检测自动更新容器的功能 所以使用watchtower工具来实现此功能。</p>
-<p>  对于此功能并没有经过精细的研究只能说just work。使用威联通容器工作站的创建功能添加下列yaml。</p>
-<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">`version:"3"`
-
-`services:`
-
-`watchtower:`
-
-`image:containrrr/watchtower`
-
-`container_name:watchtower`
-
-`restart:always`
-
-`environment:`
-
-`-TZ=Asia/Shanghai`
-
-`volumes:`
-
-`-/var/run/docker.sock:/var/run/docker.sock`
-
-`command:nginxredis--cleanup--schedule"0 0 4 * * *"`<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<p>需要修改的部分为<code>command:nginxredis--cleanup--schedule&quot;0 0 4 * * *&quot;</code></p>
-<p>将command:nginxredis这部分改为你需要更新的容器名称</p>
+<p>需要修改的部分为 <code>command: nginx redis --cleanup --schedule &quot;0 0 4 * * *&quot;</code></p>
+<p>将 <code>command:</code> 后面的 <code>nginx redis</code> 这部分改为你需要更新的容器名称</p>
 <p>注意是你已经建立的容器名称不是镜像名称</p>
-<p>schedule”0 0 4 * * *” 这部分是cron 格式的时间表达式</p>
+<p><code>--schedule &quot;0 0 4 * * *&quot;</code> 这部分是cron 格式的时间表达式</p>
 <p>该时间表达式由六个字段组成，它们按顺序表示了任务的执行时间：</p>
 <p>秒 分 时 日 月 星期 按需修改</p>
-<p>例如 0 7 * * 3</p>
+<p>例如 <code>0 0 7 * * 3</code></p>
 <p>此表达式为每周三早上七点更新</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://032.im">lux032</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://032.im/posts/a25dfa24/">https://032.im/posts/a25dfa24/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://032.im" target="_blank">Lux032 Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%87%E5%BF%98/">备忘</a></div><div class="post_share"><div class="social-share" data-image="/img/default_bg08.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/b88a14f5/" title="如何给Hexo内容添加代码类型"><img class="cover" src="/img/default_bg06.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">如何给Hexo内容添加代码类型</div></div></a></div><div class="next-post pull-right"><a href="/posts/14fb9c22/" title="设置Git对Github进行SSH传输时候使用443端口"><img class="cover" src="/img/default_bg03.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">设置Git对Github进行SSH传输时候使用443端口</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/8bfc1b22/" title="给Hexo追番插件展示页面添加顶部图的方法"><img class="cover" src="/img/default_bg06.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-12</div><div class="title">给Hexo追番插件展示页面添加顶部图的方法</div></div></a></div><div><a href="/posts/810cc422/" title="在Hetzner使用Debian10服务器架设PT盒子的方法"><img class="cover" src="/img/default_bg03.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-08</div><div class="title">在Hetzner使用Debian10服务器架设PT盒子的方法</div></div></a></div><div><a href="/posts/b88a14f5/" title="如何给Hexo内容添加代码类型"><img class="cover" src="/img/default_bg06.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-08</div><div class="title">如何给Hexo内容添加代码类型</div></div></a></div><div><a href="/posts/14fb9c22/" title="设置Git对Github进行SSH传输时候使用443端口"><img class="cover" src="/img/default_bg03.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-08</div><div class="title">设置Git对Github进行SSH传输时候使用443端口</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">lux032</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lux032" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://bangumi.tv/user/655503" target="_blank" title="Bangumi"><i class="fab fa-bilibili" style="color: #24292e;"></i></a><a class="social-icon" href="https://twitter.com/lux10032" target="_blank" title="Twitter"><i class="fab fa-twitter" style="color: #24292e;"></i></a><a class="social-icon" href="https://steamcommunity.com/id/1003210032" target="_blank" title="Steam"><i class="fab fa-steam" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:linrui745420@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">主要用于个人备忘的博客。。。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/6b19e91a/" title="星光、黑胶与圣地：东京七日漫游与横滨现地纪实"><img src="/img/tokyo2026/cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="星光、黑胶与圣地：东京七日漫游与横滨现地纪实"/></a><div class="content"><a class="title" href="/posts/6b19e91a/" title="星光、黑胶与圣地：东京七日漫游与横滨现地纪实">星光、黑胶与圣地：东京七日漫游与横滨现地纪实</a><time datetime="2026-09-13T04:00:00.000Z" title="发表于 2026-09-13 12:00:00">2026-09-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9216d9a0/" title="Music Auto Tagger - 基于音频指纹的智能音乐库整理工具"><img src="/img/default_bg03.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Music Auto Tagger - 基于音频指纹的智能音乐库整理工具"/></a><div class="content"><a class="title" href="/posts/9216d9a0/" title="Music Auto Tagger - 基于音频指纹的智能音乐库整理工具">Music Auto Tagger - 基于音频指纹的智能音乐库整理工具</a><time datetime="2025-12-28T16:00:00.000Z" title="发表于 2025-12-29 00:00:00">2025-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/756aca9b/" title="【手办展示01】近一年购入的手办展示"><img src="/img/shoubanfm01.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【手办展示01】近一年购入的手办展示"/></a><div class="content"><a class="title" href="/posts/756aca9b/" title="【手办展示01】近一年购入的手办展示">【手办展示01】近一年购入的手办展示</a><time datetime="2025-11-11T16:00:00.000Z" title="发表于 2025-11-12 00:00:00">2025-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/212afa0/" title="2024年游戏游玩计划"><img src="/img/game2024.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2024年游戏游玩计划"/></a><div class="content"><a class="title" href="/posts/212afa0/" title="2024年游戏游玩计划">2024年游戏游玩计划</a><time datetime="2024-04-16T16:00:00.000Z" title="发表于 2024-04-17 00:00:00">2024-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/149d0217/" title="如何使用Orange Pi 制作一个Plexamp Headless模块"><img src="/img/plexamp.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何使用Orange Pi 制作一个Plexamp Headless模块"/></a><div class="content"><a class="title" href="/posts/149d0217/" title="如何使用Orange Pi 制作一个Plexamp Headless模块">如何使用Orange Pi 制作一个Plexamp Headless模块</a><time datetime="2023-12-30T16:00:00.000Z" title="发表于 2023-12-31 00:00:00">2023-12-31</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2026 By lux032</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>function getGiscusTheme (theme) {
-  return theme === 'dark' ? 'dark' : 'light'
-}
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://032.im">lux032</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://032.im/posts/a25dfa24/">https://032.im/posts/a25dfa24/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://032.im" target="_blank">Lux032 Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/NAS/">NAS</a><a class="post-meta__tags" href="/tags/Docker/">Docker</a><a class="post-meta__tags" href="/tags/%E5%A8%81%E8%81%94%E9%80%9A/">威联通</a></div><div class="post-share"><div class="social-share" data-image="/img/default_bg08.webp" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/b88a14f5/" title="如何给Hexo内容添加代码类型"><img class="cover" src="/img/default_bg06.webp" onerror="onerror=null;src='/img/404.webp'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">如何给Hexo内容添加代码类型</div></div><div class="info-2"><div class="info-item-1">使用Typora源代码模式给代码上下添加  docker为代码类型 更换为需要的代码类型即可完成标注 </div></div></div></a><a class="pagination-related" href="/posts/14fb9c22/" title="设置Git对Github进行SSH传输时候使用443端口"><img class="cover" src="/img/default_bg08.webp" onerror="onerror=null;src='/img/404.webp'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">设置Git对Github进行SSH传输时候使用443端口</div></div><div class="info-2"><div class="info-item-1">在用户文件夹的隐藏目录.ssh文件夹创建一个记事本写入以下内容 Host github.comHostname ssh.github.comPort 443 重命名为无扩展名的config 此方法用于解决宽带或代理线路封禁22端口导致git无法正常推送给github的情况 </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/9216d9a0/" title="Music Auto Tagger - 基于音频指纹的智能音乐库整理工具"><img class="cover" src="/img/default_bg010.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-12-29</div><div class="info-item-2">Music Auto Tagger - 基于音频指纹的智能音乐库整理工具</div></div><div class="info-2"><div class="info-item-1">Music Auto Tagger - 让你的音乐库自动拥有完美标签项目简介Music Auto Tagger 是一个我开发的基于音频指纹和时长序列指纹的自动化音乐整理工具。它专为 NAS 和服务器环境设计,能够监控下载目录,自动识别音乐文件,补全元数据(包括歌词),并整理归档到你的音乐库中。 核心价值: 告别杂乱无章的音乐文件夹,让你的音乐库自动拥有完美的标签、封面和歌词。  为什么开发这个项目?作为一个音乐爱好者,我经常会下载各种音乐文件。但这些文件往往存在以下问题:  文件名乱码或不规范 (如 track01.mp3, 未知艺术家 - 未知歌曲.mp3) 缺少标签信息(艺术家、专辑、年份等) 没有封面图片 缺少歌词文件  手动整理这些文件既费时又容易出错。市面上虽然有一些音乐管理工具,但要么功能不全,要么不支持自动化运行,要么需要付费。因此我决定开发一个开源的、全自动的音乐整理工具。 核心特性🎧 音频指纹识别使用 Chromaprint (AcoustID) 技术,即使文件名是乱码也能精准识别歌曲。这是项目的核心功能之一。 📝 权威元数据源数据源自 MusicBrain...</div></div></div></a><a class="pagination-related" href="/posts/fa10d521/" title="本地流媒体音乐库方案对比"><img class="cover" src="/img/roon.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-10</div><div class="info-item-2">本地流媒体音乐库方案对比</div></div><div class="info-2"><div class="info-item-1">Audio Station这个是群晖内置的一个音乐库方案，在我第一次尝试使用黑群晖作为nas的时候使用过。优点： 内置软件不需要付费不需要部署。使用流畅度还算好。 缺点： 群晖威联通这类国际nas厂家特有的对自身提供软件生态的敷衍，无论是UI还是交互体验都属于很糟糕的那一档。基本没有多少自定义设置。无自带音乐刮削器。 总结为只能说能用吧。 Plexamp这个Plexamp严格来说应该算是Plex这个大型本地数据库的一个赠品，不过经过常年的更新体验算是比较优秀。初次使用会让人眼前一亮。但是本人长期使用下来也发现了不少诟病的地方。优点： 目前已经是免费软件了，只要有一个Plex账号就可以用，当然一些功能还是需要Plex Pass账户才能解锁。不过个人认为那些功能是可有可无。移动版UI可以说是这些软件里面最好的。目前也支持中文了。因为是配合Plex库使用的所以也不需要额外部署服务器端这点算是比较的方便。拥有较好的音乐刮削功能。 缺点： 主要集中在Windows客户端上面，更新了三四年依然不支持比如WASAPI和ASIO这类独占音频模式导致这软件的播放体验很糟糕，特别是在你使用专业耳放和...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">lux032</div><div class="author-info-description">Lux032 的个人博客：音乐与听音记录、日本游记、手办展示、追番，以及 NAS / 自建服务的折腾笔记。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lux032"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/lux032" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://bangumi.tv/user/655503" target="_blank" title="Bangumi"><i class="fas fa-tv" style="color: #f09199;"></i></a><a class="social-icon" href="https://twitter.com/lux10032" target="_blank" title="X"><i class="fab fa-x-twitter" style="color: #24292e;"></i></a><a class="social-icon" href="https://steamcommunity.com/id/1003210032" target="_blank" title="Steam"><i class="fab fa-steam" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:linrui745420@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">记录音乐、游记、手办、追番与折腾笔记。欢迎在文章下留言～</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/6b19e91a/" title="星光、黑胶与圣地：东京七日漫游与横滨现地纪实"><img src="/img/tokyo2026/cover.webp" onerror="this.onerror=null;this.src='/img/404.webp'" alt="星光、黑胶与圣地：东京七日漫游与横滨现地纪实"/></a><div class="content"><a class="title" href="/posts/6b19e91a/" title="星光、黑胶与圣地：东京七日漫游与横滨现地纪实">星光、黑胶与圣地：东京七日漫游与横滨现地纪实</a><time datetime="2026-09-13T04:00:00.000Z" title="发表于 2026-09-13 12:00:00">2026-09-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9216d9a0/" title="Music Auto Tagger - 基于音频指纹的智能音乐库整理工具"><img src="/img/default_bg010.webp" onerror="this.onerror=null;this.src='/img/404.webp'" alt="Music Auto Tagger - 基于音频指纹的智能音乐库整理工具"/></a><div class="content"><a class="title" href="/posts/9216d9a0/" title="Music Auto Tagger - 基于音频指纹的智能音乐库整理工具">Music Auto Tagger - 基于音频指纹的智能音乐库整理工具</a><time datetime="2025-12-28T16:00:00.000Z" title="发表于 2025-12-29 00:00:00">2025-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/756aca9b/" title="【手办展示01】近一年购入的手办展示"><img src="/img/shoubanfm01.webp" onerror="this.onerror=null;this.src='/img/404.webp'" alt="【手办展示01】近一年购入的手办展示"/></a><div class="content"><a class="title" href="/posts/756aca9b/" title="【手办展示01】近一年购入的手办展示">【手办展示01】近一年购入的手办展示</a><time datetime="2025-11-11T16:00:00.000Z" title="发表于 2025-11-12 00:00:00">2025-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/212afa0/" title="2024年游戏游玩计划"><img src="/img/game2024.webp" onerror="this.onerror=null;this.src='/img/404.webp'" alt="2024年游戏游玩计划"/></a><div class="content"><a class="title" href="/posts/212afa0/" title="2024年游戏游玩计划">2024年游戏游玩计划</a><time datetime="2024-04-16T16:00:00.000Z" title="发表于 2024-04-17 00:00:00">2024-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/149d0217/" title="如何使用Orange Pi 制作一个Plexamp Headless模块"><img src="/img/plexamp.webp" onerror="this.onerror=null;this.src='/img/404.webp'" alt="如何使用Orange Pi 制作一个Plexamp Headless模块"/></a><div class="content"><a class="title" href="/posts/149d0217/" title="如何使用Orange Pi 制作一个Plexamp Headless模块">如何使用Orange Pi 制作一个Plexamp Headless模块</a><time datetime="2023-12-30T16:00:00.000Z" title="发表于 2023-12-31 00:00:00">2023-12-31</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2023 - 2026 By lux032</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"data-mapping":"og:title","data-strict":0,"data-reactions-enabled":1,"data-emit-metadata":0,"data-input-position":"bottom","data-lang":"zh-CN"}
 
-function loadGiscus () {
-  const config = Object.assign({
-    src: 'https://giscus.app/client.js',
-    'data-repo': 'lux032/lux032.github.io',
-    'data-repo-id': 'R_kgDOKdIpug',
-    'data-category-id': 'DIC_kwDOKdIpus4Cxtoi',
-    'data-mapping': 'pathname',
-    'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
-    'data-reactions-enabled': '1',
-    crossorigin: 'anonymous',
-    async: true
-  },{"data-mapping":"og:title","data-strict":0,"data-reactions-enabled":1,"data-emit-metadata":0,"data-input-position":"bottom","data-lang":"zh-CN"})
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
 
-  let ele = document.createElement('script')
-  for (let key in config) {
-    ele.setAttribute(key, config[key])
-  }
-  document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin',ele)
-}
-
-function changeGiscusTheme (theme) {
-  function sendMessage(message) {
-    const iframe = document.querySelector('iframe.giscus-frame')
-    if (!iframe) return
-    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
   }
 
-  sendMessage({
-    setConfig: {
-      theme: getGiscusTheme(theme)
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'lux032/lux032.github.io',
+      'data-repo-id': 'R_kgDOKdIpug',
+      'data-category-id': 'DIC_kwDOKdIpus4Cxtoi',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
     }
-  });
-}
 
-btf.addModeChange('giscus', changeGiscusTheme)
+    const scriptElement = createScriptElement(giscusConfig)
 
-if ('Giscus' === 'Giscus' || !false) {
-  if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
-  else loadGiscus()
-} else {
-  function loadOtherComment () {
-    loadGiscus()
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
   }
-}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="https://vercount.one/js"></script></div></body></html>
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="https://vercount.one/js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.7.0"></script></div></div></body></html>
