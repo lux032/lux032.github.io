@@ -1,4 +1,12 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>如何使用Orange Pi 制作一个Plexamp Headless模块 | Lux032 Blog</title><meta name="author" content="lux032"><meta name="copyright" content="lux032"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp Headless模块来使用（因为比树莓派便宜 硬件: Orange Pi 开发板2g以上运存的版本 性能要高于树莓派3B 本人使用的是Orange Pi3 LTS 大概差不多的硬件基于linux的都可以吧。 软件: Plexamp Headless 当然你需要一个Plex Pass的账号。  安装过程进">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0F1420">
+<title>如何使用Orange Pi 制作一个Plexamp Headless模块 · Lux032 Blog</title>
+<meta name="description" content="因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp Headless模块来使用（因为比树莓派便宜 硬件: Orange Pi 开发板2g以上运存的版本 性能要高于树莓派3B 本人使用的是Orange Pi3 LTS 大概差不多的硬件基于linux的都可以吧。 软件: Plexamp Headless 当然你需要一个Plex Pass的账号。  安装过程进">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何使用Orange Pi 制作一个Plexamp Headless模块">
 <meta property="og:url" content="https://032.im/posts/149d0217/index.html">
@@ -12,199 +20,74 @@
 <meta property="article:tag" content="DIY硬件">
 <meta property="article:tag" content="Orange Pi">
 <meta property="article:tag" content="Plex">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://032.im/img/plexamp.webp"><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "如何使用Orange Pi 制作一个Plexamp Headless模块",
-  "url": "https://032.im/posts/149d0217/",
-  "image": "https://032.im/img/plexamp.webp",
-  "datePublished": "2023-12-30T16:00:00.000Z",
-  "dateModified": "2023-12-30T16:00:00.000Z",
-  "author": [
-    {
-      "@type": "Person",
-      "name": "lux032",
-      "url": "https://032.im"
-    }
-  ]
-}</script><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://032.im/posts/149d0217/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
-    (() => {
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://032.im/img/plexamp.webp">
+<meta name="keywords" content="Lux032, 博客, 听音记录, 游记, 手办, 追番, NAS, Hexo">
+<link rel="canonical" href="https://032.im/posts/149d0217/">
+<link rel="icon" href="/img/favicon.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lux032 Blog" href="/atom.xml">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/yehang.css">
+<meta name="generator" content="Hexo 8.1.2"></head>
+<body class="is-post">
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/">Lux032<em>Blog</em></a>
+    <nav class="site-nav" aria-label="主导航">
       
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        const data = { value }
-
-        if (ttl != null) {
-          data.expiry = Date.now() + ttl * 86400000
-        }
-
-        localStorage.setItem(key, JSON.stringify(data))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return
-
-        try {
-          const data = JSON.parse(itemStr)
-
-          if (data.expiry && Date.now() > data.expiry) {
-            localStorage.removeItem(key)
-            return
-          }
-
-          return data.value
-        } catch {
-          localStorage.removeItem(key)
-        }
-      }
-    }
-
-    const scriptCache = new Map()
-    const cssCache = new Map()
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => {
-        if (scriptCache.has(url)) {
-          return scriptCache.get(url)
-        }
-
-        const promise = new Promise((resolve, reject) => {
-          const script = document.createElement('script')
-
-          script.src = url
-          script.async = true
-
-          for (const key in attr) {
-            script.setAttribute(key, attr[key])
-          }
-
-          script.onload = resolve
-          script.onerror = reject
-
-          document.head.appendChild(script)
-        })
-
-        scriptCache.set(url, promise)
-
-        return promise
-      },
-      getCSS: (url, id) => {
-        if (cssCache.has(url)) {
-          return cssCache.get(url)
-        }
-
-        const promise = new Promise((resolve, reject) => {
-          const link = document.createElement('link')
-
-          link.rel = 'stylesheet'
-          link.href = url
-
-          if (id) {
-            link.id = id
-          }
-
-          link.onload = resolve
-          link.onerror = reject
-
-          document.head.appendChild(link)
-        })
-
-        cssCache.set(url, promise)
-
-        return promise
-      },
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
-  
+      <a href="/">首页</a>
       
-      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
-      const activateDarkMode = () => {
-        document.documentElement.dataset.theme = 'dark'
-        if (metaThemeColor !== null) {
-          metaThemeColor.setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.dataset.theme = 'light'
-        if (metaThemeColor !== null) {
-          metaThemeColor.setAttribute('content', '#ffffff')
-        }
-      }
-
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
-
-      const theme = saveToLocal.get('theme')
-    
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
-        
+      <a href="/archives/">归档</a>
       
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
-    
+      <a href="/tags/">标签</a>
       
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
-  translate: undefined,
-  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyloadPlugin: true,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '如何使用Orange Pi 制作一个Plexamp Headless模块',
-  isHighlightShrink: false,
-  isToc: true,
-  pageType: 'post'
-}</script><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="Lux032 Blog" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-tv"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/plexamp.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Lux032 Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">如何使用Orange Pi 制作一个Plexamp Headless模块</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fas fa-tv"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">如何使用Orange Pi 制作一个Plexamp Headless模块</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-30T16:00:00.000Z" title="发表于 2023-12-31 00:00:00">2023-12-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-30T16:00:00.000Z" title="更新于 2023-12-31 00:00:00">2023-12-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/">折腾笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">634</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:730,&quot;messagePrev&quot;:&quot;本文最后更新于&quot;,&quot;messageNext&quot;:&quot;天前，其中的信息可能已经过时。&quot;,&quot;postUpdate&quot;:&quot;2023-12-31 00:00:00&quot;}" hidden></div><h2 id="因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp-Headless模块来使用（因为比树莓派便宜"><a href="#因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp-Headless模块来使用（因为比树莓派便宜" class="headerlink" title="因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp Headless模块来使用（因为比树莓派便宜"></a>因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp Headless模块来使用（因为比树莓派便宜</h2><ul>
+      <a href="/bangumis/">追番</a>
+      
+      <a href="/link/">友链</a>
+      
+      <a href="/about/">关于</a>
+      
+      <button class="search-btn" type="button" aria-label="搜索" data-search-open>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <div class="post-wrap">
+    <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+      <header class="post-head">
+        <h1 itemprop="headline">如何使用Orange Pi 制作一个Plexamp Headless模块</h1>
+        <p class="meta">
+          <time class="mi" datetime="2023-12-30T16:00:00.000Z" itemprop="datePublished">2023-12-31</time>
+          <a class="mi cat" href="/categories/%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/"><span class="dot" aria-hidden="true">·</span>折腾笔记</a>
+          <span class="mi"><span class="dot" aria-hidden="true">·</span>约 639 字</span>
+          
+          <span class="mi"><span class="dot" aria-hidden="true">·</span>读完约 3 分钟</span>
+          
+        </p>
+      </header>
+
+      
+      <p class="outdate" hidden data-updated="1703952000000" data-limit="730" data-prev="本文最后更新于" data-next="天前，其中的信息可能已经过时。"></p>
+      
+
+      
+
+      
+
+      
+      <details class="toc-mobile">
+        <summary>本文目录 · 7 节<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <ol class="toc-list"><li class="lv2"><a href="#因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp-Headless模块来使用（因为比树莓派便宜">因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp Headless模块来使用（因为比树莓派便宜</a></li><li class="lv2"><a href="#安装过程">安装过程</a></li><li class="lv2"><a href="#安装Node-JS-安装">安装Node JS 安装</a></li><li class="lv2"><a href="#安装Plexamp-Headless">安装Plexamp Headless</a></li><li class="lv2"><a href="#获取Token">获取Token</a></li><li class="lv2"><a href="#修改默认的plexamp-service文件">修改默认的plexamp.service文件</a></li><li class="lv2"><a href="#设置Plexamp-Headless自启动">设置Plexamp Headless自启动</a></li></ol>
+      </details>
+      
+
+      <div class="post-body" itemprop="articleBody"><h2 id="因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp-Headless模块来使用（因为比树莓派便宜"><a href="#因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp-Headless模块来使用（因为比树莓派便宜" class="headerlink" title="因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp Headless模块来使用（因为比树莓派便宜"></a>因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp Headless模块来使用（因为比树莓派便宜</h2><ul>
 <li><span style="font-size:18px;">硬件: Orange Pi 开发板2g以上运存的版本 性能要高于树莓派3B 本人使用的是Orange Pi3 LTS 大概差不多的硬件基于linux的都可以吧。</span></li>
 <li><span style="font-size:18px;">软件: Plexamp Headless 当然你需要一个Plex Pass的账号。</span></li>
 </ul>
@@ -261,79 +144,69 @@ Restart&#x3D;on-failure<span aria-hidden="true" class="line-numbers-rows"><span>
 
 <p><span style="font-size:18px;">重启香橙派查看是否成功生效。</span></p>
 <p><span style="font-size:18px;">这样应该就完成了。</span></p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://032.im">lux032</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://032.im/posts/149d0217/">https://032.im/posts/149d0217/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://032.im" target="_blank">Lux032 Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Plex/">Plex</a><a class="post-meta__tags" href="/tags/Orange-Pi/">Orange Pi</a><a class="post-meta__tags" href="/tags/DIY%E7%A1%AC%E4%BB%B6/">DIY硬件</a></div><div class="post-share"><div class="social-share" data-image="/img/plexamp.webp" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/212afa0/" title="2024年游戏游玩计划"><img class="cover" src="/img/game2024.webp" onerror="onerror=null;src='/img/404.webp'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">2024年游戏游玩计划</div></div><div class="info-2"><div class="info-item-1">因为近期实在是没有什么想写的但是放这这个博客在这里实在是感觉有些浪费于是准备把今年准备玩和已经玩了的游戏做一下总结汇总吧已经游玩1月  伊苏X -北境历险- 瑞奇与叮当 时空跳转  星球大战 绝地：幸存者  战神 诸神黄昏 总的来说一月基本上是补完了一下之前一直没玩但是想玩的ps5独占游戏 2月  女神异闻录3 Reload 二月的话基本上被P3R占据了大部分时间 其他时间大大概就是打打Dota2了 3月  最终幻想7 重生 圣兽之王 三月的主旋律是作为我买PS5的核心原因的FINAL FANTASY VII REBIRTH 不过这游戏实在是堆了太多游戏内容 50小时以后就有些玩不动了。不过香草社的圣兽之王倒是给了我很大的惊喜，内容拿捏到位质量优秀。  预计游玩4月  剑星 6月  艾尔登法环DLC 黄金树之影 8月  黑神话悟空 10月  暗喻幻想 可能游玩（包括今年可能发售，有点兴趣的游戏）浪人崛起 黑帝斯2 丝之歌 </div></div></div></a><a class="pagination-related" href="/posts/13b8a157/" title="The International 2023 赛后记录"><img class="cover" src="/img/TI12-01.webp" onerror="onerror=null;src='/img/404.webp'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">The International 2023 赛后记录</div></div><div class="info-2"><div class="info-item-1">TI12 今天也打完了稍微做点记录吧作为观众来说的话今年看得还算尽兴吧。从赛季初的假赛开挂风波，到完美世界的动手术式禁赛选手，今年的形式所有人都觉得不容乐观。但是AR和LGD的表现都出乎了我个人的预期。两队进入到了四强给了中国观众一个做梦的机会，AR的表现走到这一步可以说已经是一抹蓝色的奇迹，虽然最后并没有以一个完美的童话收尾。今年终究是属于雪碧的一年。总结来说的话大概是有些不甘又有些释然的一年。希望下一年今年打出来的新人可以继续进化吧。CNDOTA举盾可能已经是一种奢望了吧，但是未来谁知道呢。可能今年会是CN赛区新的起点也说不定。总之今年的口号：Make CN Dota Great Again！大概是做到了吧。 AR TI12 Azure Ray - Walkout    Playoff Profiles - Azure Ray   Finals Profile - Azure Ray     AR入场   森哥   李斯    AR众人  LGD TI12 LGD Gaming - Walkout    Playoff Profiles - LGD Gaming  </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/fa10d521/" title="本地流媒体音乐库方案对比"><img class="cover" src="/img/roon.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-10</div><div class="info-item-2">本地流媒体音乐库方案对比</div></div><div class="info-2"><div class="info-item-1">Audio Station这个是群晖内置的一个音乐库方案，在我第一次尝试使用黑群晖作为nas的时候使用过。优点： 内置软件不需要付费不需要部署。使用流畅度还算好。 缺点： 群晖威联通这类国际nas厂家特有的对自身提供软件生态的敷衍，无论是UI还是交互体验都属于很糟糕的那一档。基本没有多少自定义设置。无自带音乐刮削器。 总结为只能说能用吧。 Plexamp这个Plexamp严格来说应该算是Plex这个大型本地数据库的一个赠品，不过经过常年的更新体验算是比较优秀。初次使用会让人眼前一亮。但是本人长期使用下来也发现了不少诟病的地方。优点： 目前已经是免费软件了，只要有一个Plex账号就可以用，当然一些功能还是需要Plex Pass账户才能解锁。不过个人认为那些功能是可有可无。移动版UI可以说是这些软件里面最好的。目前也支持中文了。因为是配合Plex库使用的所以也不需要额外部署服务器端这点算是比较的方便。拥有较好的音乐刮削功能。 缺点： 主要集中在Windows客户端上面，更新了三四年依然不支持比如WASAPI和ASIO这类独占音频模式导致这软件的播放体验很糟糕，特别是在你使用专业耳放和...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">lux032</div><div class="author-info-description">Lux032 的个人博客：音乐与听音记录、日本游记、手办展示、追番，以及 NAS / 自建服务的折腾笔记。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lux032"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://www.last.fm/zh/user/lux032" target="_blank" title="Last.fm"><i class="fab fa-lastfm" style="color: #d51007;"></i></a><a class="social-icon" href="https://bangumi.tv/user/655503" target="_blank" title="Bangumi"><i class="fas fa-tv" style="color: #f09199;"></i></a><a class="social-icon" href="https://twitter.com/lux10032" target="_blank" title="X"><i class="fab fa-x-twitter" style="color: #24292e;"></i></a><a class="social-icon" href="https://steamcommunity.com/id/1003210032" target="_blank" title="Steam"><i class="fab fa-steam" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:linrui745420@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">记录音乐、游记、手办、追番与折腾笔记。欢迎在文章下留言～</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%A0%E4%B8%BA%E5%AF%B9%E4%BA%8E%E9%9F%B3%E9%A2%91%E7%9B%B4%E9%80%9A%E6%9C%89%E9%9C%80%E6%B1%82%EF%BC%8C%E4%BD%86%E6%98%AFRoon%E7%9A%84%E6%AD%A3%E7%89%88%E5%8F%88%E5%A4%AA%E6%98%82%E8%B4%B5%EF%BC%8C%E9%A1%BE%E6%9C%80%E5%90%8E%E5%86%B3%E5%AE%9A%E4%BD%BF%E7%94%A8%E9%A6%99%E6%A9%99%E6%B4%BE%E6%9D%A5%E5%81%9A%E4%B8%80%E4%B8%AAPlexamp-Headless%E6%A8%A1%E5%9D%97%E6%9D%A5%E4%BD%BF%E7%94%A8%EF%BC%88%E5%9B%A0%E4%B8%BA%E6%AF%94%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BE%BF%E5%AE%9C"><span class="toc-number">1.</span> <span class="toc-text">因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp Headless模块来使用（因为比树莓派便宜</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">安装过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Node-JS-%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">安装Node JS 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Plexamp-Headless"><span class="toc-number">4.</span> <span class="toc-text">安装Plexamp Headless</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96Token"><span class="toc-number">5.</span> <span class="toc-text">获取Token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%9A%84plexamp-service%E6%96%87%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text">修改默认的plexamp.service文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEPlexamp-Headless%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-number">7.</span> <span class="toc-text">设置Plexamp Headless自启动</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/6b19e91a/" title="星光、黑胶与圣地：东京七日漫游与横滨现地纪实"><img src="/img/tokyo2026/cover.webp" onerror="this.onerror=null;this.src='/img/404.webp'" alt="星光、黑胶与圣地：东京七日漫游与横滨现地纪实"/></a><div class="content"><a class="title" href="/posts/6b19e91a/" title="星光、黑胶与圣地：东京七日漫游与横滨现地纪实">星光、黑胶与圣地：东京七日漫游与横滨现地纪实</a><time datetime="2026-09-13T04:00:00.000Z" title="发表于 2026-09-13 12:00:00">2026-09-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9216d9a0/" title="Music Auto Tagger - 基于音频指纹的智能音乐库整理工具"><img src="/img/default_bg04.webp" onerror="this.onerror=null;this.src='/img/404.webp'" alt="Music Auto Tagger - 基于音频指纹的智能音乐库整理工具"/></a><div class="content"><a class="title" href="/posts/9216d9a0/" title="Music Auto Tagger - 基于音频指纹的智能音乐库整理工具">Music Auto Tagger - 基于音频指纹的智能音乐库整理工具</a><time datetime="2025-12-28T16:00:00.000Z" title="发表于 2025-12-29 00:00:00">2025-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/756aca9b/" title="【手办展示01】近一年购入的手办展示"><img src="/img/shoubanfm01.webp" onerror="this.onerror=null;this.src='/img/404.webp'" alt="【手办展示01】近一年购入的手办展示"/></a><div class="content"><a class="title" href="/posts/756aca9b/" title="【手办展示01】近一年购入的手办展示">【手办展示01】近一年购入的手办展示</a><time datetime="2025-11-11T16:00:00.000Z" title="发表于 2025-11-12 00:00:00">2025-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/212afa0/" title="2024年游戏游玩计划"><img src="/img/game2024.webp" onerror="this.onerror=null;this.src='/img/404.webp'" alt="2024年游戏游玩计划"/></a><div class="content"><a class="title" href="/posts/212afa0/" title="2024年游戏游玩计划">2024年游戏游玩计划</a><time datetime="2024-04-16T16:00:00.000Z" title="发表于 2024-04-17 00:00:00">2024-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/149d0217/" title="如何使用Orange Pi 制作一个Plexamp Headless模块"><img src="/img/plexamp.webp" onerror="this.onerror=null;this.src='/img/404.webp'" alt="如何使用Orange Pi 制作一个Plexamp Headless模块"/></a><div class="content"><a class="title" href="/posts/149d0217/" title="如何使用Orange Pi 制作一个Plexamp Headless模块">如何使用Orange Pi 制作一个Plexamp Headless模块</a><time datetime="2023-12-30T16:00:00.000Z" title="发表于 2023-12-31 00:00:00">2023-12-31</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2023 - 2026 By lux032</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
-  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
-  const option = {"data-mapping":"og:title","data-strict":0,"data-reactions-enabled":1,"data-emit-metadata":0,"data-input-position":"bottom","data-lang":"zh-CN"}
+</div>
 
-  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+      <p class="end-mark" aria-hidden="true">・　完　・</p>
 
-  const createScriptElement = config => {
-    const ele = document.createElement('script')
-    Object.entries(config).forEach(([key, value]) => {
-      ele.setAttribute(key, value)
-    })
-    return ele
-  }
+      
+      <p class="post-tags" aria-label="标签">
+        <a href="/tags/Plex/">Plex</a><a href="/tags/Orange-Pi/">Orange Pi</a><a href="/tags/DIY%E7%A1%AC%E4%BB%B6/">DIY硬件</a>
+      </p>
+      
 
-  const loadGiscus = (el = document, key) => {
-    const mappingConfig = isShuoshuo
-      ? { 'data-mapping': 'specific', 'data-term': key }
-      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+      <nav class="post-nav" aria-label="上一篇与下一篇">
+        <div class="prev">
+          <p class="dir">上一篇（更早） · 2023-10-30</p>
+          <a href="/posts/13b8a157/">The International 2023 赛后记录</a>
+        </div>
+        <div class="next">
+          <p class="dir">下一篇（更新） · 2024-04-17</p>
+          <a href="/posts/212afa0/">2024年游戏游玩计划</a>
+        </div>
+      </nav>
 
-    const giscusConfig = {
-      src: 'https://giscus.app/client.js',
-      'data-repo': 'lux032/lux032.github.io',
-      'data-repo-id': 'R_kgDOKdIpug',
-      'data-category-id': 'DIC_kwDOKdIpus4Cxtoi',
-      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
-      'data-reactions-enabled': '1',
-      crossorigin: 'anonymous',
-      async: true,
-      ...option,
-      ...mappingConfig
-    }
+      
+<section class="comments" id="comments" aria-labelledby="comments-h">
+  <h2 id="comments-h">评论</h2>
+  <div class="giscus-slot" data-giscus
+       data-repo="lux032/lux032.github.io" data-repo-id="R_kgDOKdIpug" data-category-id="DIC_kwDOKdIpus4Cxtoi"
+       data-mapping="og:title" data-theme="transparent_dark" data-lang="zh-CN">
+    <p class="giscus-note">评论由 <a target="_blank" rel="noopener" href="https://giscus.app/zh-CN">Giscus</a> 提供，需要 GitHub 账号。滚动到这里时自动加载。</p>
+  </div>
+</section>
 
-    const scriptElement = createScriptElement(giscusConfig)
 
-    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+    </article>
 
-    if (isShuoshuo) {
-      window.shuoshuoComment.destroyGiscus = () => {
-        if (el.children.length) {
-          el.innerHTML = ''
-          el.classList.add('no-comment')
-        }
-      }
-    }
-  }
+    
+    <aside class="toc-rail" aria-label="本文目录">
+      <div class="toc-inner">
+        <h2 class="toc-h">本文目录</h2>
+        <ol class="toc-list"><li class="lv2"><a href="#因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp-Headless模块来使用（因为比树莓派便宜">因为对于音频直通有需求，但是Roon的正版又太昂贵，顾最后决定使用香橙派来做一个Plexamp Headless模块来使用（因为比树莓派便宜</a></li><li class="lv2"><a href="#安装过程">安装过程</a></li><li class="lv2"><a href="#安装Node-JS-安装">安装Node JS 安装</a></li><li class="lv2"><a href="#安装Plexamp-Headless">安装Plexamp Headless</a></li><li class="lv2"><a href="#获取Token">获取Token</a></li><li class="lv2"><a href="#修改默认的plexamp-service文件">修改默认的plexamp.service文件</a></li><li class="lv2"><a href="#设置Plexamp-Headless自启动">设置Plexamp Headless自启动</a></li></ol>
+        <p class="toc-back"><a href="#main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>回到顶部</a></p>
+      </div>
+    </aside>
+    
+  </div>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p class="motto">节能主义，兴趣使然。</p>
+    <p class="legal">© 2023–2026 lux032 · 由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a> 构建 · 主题「夜航」 · <a href="/atom.xml">RSS</a></p>
+  </div>
+</footer>
 
-  const changeGiscusTheme = theme => {
-    const iframe = document.querySelector('#giscus-wrap iframe')
-    if (iframe) {
-      const message = {
-        giscus: {
-          setConfig: {
-            theme: getGiscusTheme(theme)
-          }
-        }
-      }
-      iframe.contentWindow.postMessage(message, 'https://giscus.app')
-    }
-  }
+<dialog class="search" id="search" aria-label="站内搜索" data-index="/search.xml">
+  <form method="dialog" class="search-box" role="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input type="search" id="search-input" placeholder="搜文章标题和正文" autocomplete="off" aria-label="搜索关键词">
+    <button type="submit" class="search-close" value="close">关闭</button>
+  </form>
+  <p class="search-state" id="search-state" role="status">输入关键词开始搜索。</p>
+  <ol class="search-results" id="search-results"></ol>
+</dialog>
 
-  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
-
-  if (isShuoshuo) {
-    'Giscus' === 'Giscus'
-      ? window.shuoshuoComment = { loadComment: loadGiscus }
-      : window.loadOtherComment = loadGiscus
-    return
-  }
-
-  if ('Giscus' === 'Giscus' || !false) {
-    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
-    else loadGiscus()
-  } else {
-    window.loadOtherComment = loadGiscus
-  }
-})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="https://vercount.one/js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.7.0"></script></div></div></body></html>
+<script src="/js/yehang.js" defer></script>
+</body>
+</html>
